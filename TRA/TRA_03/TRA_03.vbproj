@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4020674F-17BA-4F89-9563-0A9CE99131CB}</ProjectGuid>
+    <ProjectTypeGuids>{DB03555F-0C8B-43BE-9FF9-57896B3C5E56};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>My Project</AppDesignerFolder>
+    <RootNamespace>TRA_03</RootNamespace>
+    <AssemblyName>TRA_03</AssemblyName>
+    <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>zh-Hant</SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>TRA_03_$(Configuration)_$(Platform).xap</XapFilename>
+    <SilverlightManifestTemplate>My Project\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>TRA_03.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <MyType>Empty</MyType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>Bin\Debug</OutputPath>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <DocumentationFile>TRA_03.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <DocumentationFile>TRA_03.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>Bin\x86\Debug</OutputPath>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <DocumentationFile>TRA_03.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\x86\Release</OutputPath>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <DocumentationFile>TRA_03.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|ARM' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>Bin\ARM\Debug</OutputPath>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <DocumentationFile>TRA_03.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|ARM' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\ARM\Release</OutputPath>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <DocumentationFile>TRA_03.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Xml" />
+    <Import Include="System.Net" />
+    <Import Include="System.Windows" />
+    <Import Include="System.Windows.Controls" />
+    <Import Include="System.Windows.Documents" />
+    <Import Include="System.Windows.Input" />
+    <Import Include="System.Windows.Media" />
+    <Import Include="System.Windows.Media.Animation" />
+    <Import Include="System.Windows.Navigation" />
+    <Import Include="System.Windows.Shapes" />
+    <Import Include="Microsoft.Phone.Controls" />
+    <Import Include="Microsoft.Phone.Shell" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.vb">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="clsDatabaseIO.vb" />
+    <Compile Include="clsPrice.vb" />
+    <Compile Include="clsStation.vb" />
+    <Compile Include="clsTrain.vb" />
+    <Compile Include="dfStationGrp.xaml.vb">
+      <DependentUpon>dfStationGrp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalVariables.vb" />
+    <Compile Include="pgFavorite.xaml.vb">
+      <DependentUpon>pgFavorite.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pgLoading.xaml.vb">
+      <DependentUpon>pgLoading.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pgTrainDetail.xaml.vb">
+      <DependentUpon>pgTrainDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\AppResources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizedStrings.vb" />
+    <Compile Include="MainPage.xaml.vb">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="ViewModels\ItemViewModel.vb" />
+    <Compile Include="vmLocationSearch.vb" />
+    <Compile Include="vmMain.vb" />
+    <Compile Include="vmMyFavorite.vb" />
+    <Compile Include="vmNoNuke.vb" />
+    <Compile Include="vmSetting.vb" />
+    <Compile Include="vmStartEndSearch.vb" />
+    <Compile Include="vmTrain.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="dfStationGrp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pgFavorite.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pgLoading.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pgTrainDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\AppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="My Project\WMAppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TRA_03_2014_04_28_23_02_55.sap" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\AlignmentGrid.png" />
+    <Content Include="Assets\ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\DebugTimeTable\20131005.xml" />
+    <Content Include="Assets\DebugTimeTable\20140303.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140401.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140402.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140403.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140404.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140405.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140406.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140407.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140408.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140409.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140410.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140411.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140412.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140413.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140414.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140415.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140416.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140417.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140418.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140419.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140420.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140421.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140422.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140423.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140424.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140425.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140426.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140427.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140428.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140429.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140430.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140501.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140502.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140503.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140504.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140505.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140506.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140507.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140508.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140509.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140510.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140511.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140512.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140513.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140514.xml" />
+    <Content Include="Assets\Icons\Bike.png" />
+    <Content Include="Assets\Icons\black_arrow.png" />
+    <Content Include="Assets\Icons\checkmark_pencil.png" />
+    <Content Include="Assets\Icons\cloud_download.png" />
+    <Content Include="Assets\Icons\Cripple.png" />
+    <Content Include="Assets\Icons\Dinning.png" />
+    <Content Include="Assets\Icons\EveryDay.png" />
+    <Content Include="Assets\Icons\exchange.png" />
+    <Content Include="Assets\Icons\facebook.png" />
+    <Content Include="Assets\Icons\globe.png" />
+    <Content Include="Assets\Icons\logo.png" />
+    <Content Include="Assets\Icons\magnify_down.png" />
+    <Content Include="Assets\Icons\Milk.png" />
+    <Content Include="Assets\Icons\msg.png" />
+    <Content Include="Assets\Icons\Night.png" />
+    <Content Include="Assets\Icons\OneMore.png" />
+    <Content Include="Assets\Icons\one_check.png" />
+    <Content Include="Assets\Icons\rotate.png" />
+    <Content Include="Assets\Icons\update.png" />
+    <Content Include="Assets\Icons\white_arrow.png" />
+    <Content Include="Assets\NoNuke\banner.jpg" />
+    <Content Include="Assets\NoNuke\NoNukeFlag_691_336.jpg" />
+    <Content Include="Assets\NoNuke\NoNukeYellow_691_336.jpg" />
+    <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tiles\FlipCycleTileMedium.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tiles\FlipCycleTileSmall.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tiles\icon336.png" />
+    <Content Include="Assets\Tiles\IconicTileMediumLarge.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tiles\IconicTileSmall.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tiles\icon_159.png" />
+    <Content Include="Assets\Tiles\NoNukeFlag_691_336.jpg" />
+    <Content Include="ReadMe.Coding4Fun.Toolkit.txt" />
+    <Content Include="README_FIRST.txt" />
+    <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\AppResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AppResources.zh-Hant.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Coding4Fun.Toolkit.Audio">
+      <HintPath>..\packages\Coding4Fun.Toolkit.Audio.2.0.7\lib\windowsphone8\Coding4Fun.Toolkit.Audio.dll</HintPath>
+    </Reference>
+    <Reference Include="Coding4Fun.Toolkit.Controls">
+      <HintPath>..\packages\Coding4Fun.Toolkit.Controls.2.0.7\lib\windowsphone8\Coding4Fun.Toolkit.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Coding4Fun.Toolkit.Net">
+      <HintPath>..\packages\Coding4Fun.Toolkit.Net.2.0.7\lib\windowsphone8\Coding4Fun.Toolkit.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Coding4Fun.Toolkit.Storage">
+      <HintPath>..\packages\Coding4Fun.Toolkit.Storage.2.0.7\lib\windowsphone8\Coding4Fun.Toolkit.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone.Controls.Toolkit">
+      <HintPath>..\packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpZipLib.WindowsPhone7">
+      <HintPath>..\packages\SharpZipLib-WP7.0.86.0.518\lib\sl4-windowsphone71\SharpZipLib.WindowsPhone7.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+</Project>

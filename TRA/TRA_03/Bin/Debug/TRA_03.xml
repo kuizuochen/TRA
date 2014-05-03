@@ -1,0 +1,105 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+TRA_03
+</name>
+</assembly>
+<members>
+<member name="M:TRA_03.App.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="M:TRA_03.pgFavorite.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="T:TRA_03.LocalizedStrings">
+	<summary>
+ Provides access to string resources.
+ </summary>
+</member><member name="P:TRA_03.AppResources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:TRA_03.AppResources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="P:TRA_03.AppResources.ResourceFlowDirection">
+	<summary>
+  Looks up a localized string similar to LeftToRight.
+</summary>
+</member><member name="P:TRA_03.AppResources.ResourceLanguage">
+	<summary>
+  Looks up a localized string similar to us-EN.
+</summary>
+</member><member name="P:TRA_03.AppResources.ApplicationTitle">
+	<summary>
+  Looks up a localized string similar to MY APPLICATION.
+</summary>
+</member><member name="P:TRA_03.AppResources.SampleProperty">
+	<summary>
+  Looks up a localized string similar to Sample Runtime Property Value.
+</summary>
+</member><member name="P:TRA_03.AppResources.AppBarButtonText">
+	<summary>
+  Looks up a localized string similar to button text.
+</summary>
+</member><member name="P:TRA_03.AppResources.AppBarMenuItemText">
+	<summary>
+  Looks up a localized string similar to Menu Item.
+</summary>
+</member><member name="T:TRA_03.AppResources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="P:TRA_03.App.ViewModel">
+	<summary>
+ A static ViewModel used by the views to bind against.
+ </summary>
+	<returns>The MainViewModel object.</returns>
+</member><member name="P:TRA_03.App.RootFrame">
+	<summary>
+ Provides easy access to the root frame of the Phone Application.
+ </summary>
+	<returns>The root frame of the Phone Application.</returns>
+</member><member name="M:TRA_03.App.#ctor">
+	<summary>
+ Constructor for the Application object.
+ </summary>
+</member><member name="M:TRA_03.dfStationGrp.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="M:TRA_03.pgLoading.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="P:TRA_03.ItemViewModel.LineOne">
+	<summary>
+ Sample ViewModel property; this property is used in the view to display its value using a Binding.
+ </summary>
+	<returns></returns>
+</member><member name="P:TRA_03.ItemViewModel.LineTwo">
+	<summary>
+ Sample ViewModel property; this property is used in the view to display its value using a Binding.
+ </summary>
+	<returns></returns>
+</member><member name="P:TRA_03.ItemViewModel.LineThree">
+	<summary>
+ Sample ViewModel property; this property is used in the view to display its value using a Binding.
+ </summary>
+	<returns></returns>
+</member><member name="M:TRA_03.MainPage.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="M:TRA_03.pgTrainDetail.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member>
+</members>
+</doc>

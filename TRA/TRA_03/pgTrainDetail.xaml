@@ -1,0 +1,144 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="TRA_03.pgTrainDetail"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:this="clr-namespace:TRA_03"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="#323232"
+    FontFamily="Microsoft Mhei"  
+    FontWeight="ExtraBold"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+    <phone:PhoneApplicationPage.Resources>
+        <this:dcStBg x:Key="StBgConverter"></this:dcStBg>
+        <this:dcStForeground x:Key="StFgConverter"></this:dcStForeground>
+        <DataTemplate x:Key="dtStation">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="160"></ColumnDefinition>
+                    <ColumnDefinition Width="160"></ColumnDefinition>
+                    <ColumnDefinition Width="160"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0" Background="{Binding pOrder, Converter={StaticResource StBgConverter}}" BorderThickness="0,1,1,2" BorderBrush="#828282" >
+                    <TextBlock Text="{Binding pStation.DisplayName}" FontSize="26" HorizontalAlignment="Center" Foreground="{Binding pIsHighLight, Converter={StaticResource StFgConverter}}" VerticalAlignment="Center"></TextBlock>
+                </Border>
+                <Border Grid.Column="1" Background="{Binding pOrder, Converter={StaticResource StBgConverter}}" BorderThickness="0,1,0,2" BorderBrush="#828282" >
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <TextBlock Text="{Binding pDisplayArrTime}" FontSize="26" HorizontalAlignment="Center" Foreground="#323232" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Text="{Binding pDelayString}" FontSize="16" Foreground="Red" VerticalAlignment="Bottom" Margin="0,0,0,4" ></TextBlock>
+                    </StackPanel>
+                    
+                </Border>
+                <Border Grid.Column="2" Background="{Binding pOrder, Converter={StaticResource StBgConverter}}" BorderThickness="1,1,0,2" BorderBrush="#828282" >
+                    <TextBlock Text="{Binding pDisplayDepTime}" FontSize="26" HorizontalAlignment="Center" Foreground="#323232" VerticalAlignment="Center"></TextBlock>
+                </Border>
+            </Grid> 
+        </DataTemplate>
+    </phone:PhoneApplicationPage.Resources>
+    <phone:PhoneApplicationPage.ApplicationBar >
+        <shell:ApplicationBar>
+            <shell:ApplicationBarIconButton x:Name="abtnUpdateStatus" IconUri="Assets/Icons/magnify_down.png" Text="查誤點"
+                                            Click="abtnUpdateStatus_Click"/>
+            <shell:ApplicationBarIconButton x:Name="abtnUpdate" IconUri="Assets/Icons/rotate.png" Text="更新" 
+                                            Click="abtnUpdate_Click"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="160"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <Grid Grid.Row="0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"></ColumnDefinition>
+                <ColumnDefinition Width="5"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="3*"></RowDefinition>
+                <RowDefinition Height="4"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0"  Orientation="Horizontal">
+                <TextBlock Text="車次" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                <TextBlock Text="{Binding pTrainID}" Foreground="DarkBlue" FontFamily="Calibri"  FontWeight="ExtraBold" FontSize="26" VerticalAlignment="Center" Margin="2"/>
+                <TextBlock Text="準點"  Visibility="{Binding pOnTimeFlag}" FontWeight="ExtraBold" FontSize="18" VerticalAlignment="Bottom"   Margin="120,0,0,8" Grid.Row="1"   Foreground="#FF47CF15" FontFamily="Microsoft Mhei" ></TextBlock>
+                <TextBlock Text="誤點"  Visibility="{Binding pDelayFlag}" FontWeight="ExtraBold" FontSize="18" VerticalAlignment="Bottom"   Margin="70,0,0,8" Grid.Row="1"   Foreground="Red" FontFamily="Microsoft Mhei" ></TextBlock>
+                <TextBlock Text="{Binding pDelaySpan}" Visibility="{Binding pDelayFlag}"  FontSize="18" Foreground="Red" FontFamily="Microsoft Mhei"  VerticalAlignment="Bottom" Margin="2,0,0,8"  ></TextBlock>
+            </StackPanel>
+            <StackPanel  Grid.Row="1"  Orientation="Horizontal" >
+                <TextBlock Text="{Binding pTrainClassFullNameCht}"  Foreground="{Binding pTrainClassColor}"  Width="180" VerticalAlignment="Bottom" HorizontalAlignment="Left"  Grid.Row="1" FontSize="60" Margin="20,-7,0,0" TextAlignment="Center"  />
+                <TextBlock Text="{Binding pSpTag_Full}" Margin="10,0,0,10" VerticalAlignment="Bottom"></TextBlock>
+            </StackPanel>
+            <Rectangle Fill="#323232" Grid.Row="2" HorizontalAlignment="Stretch" Margin="0,1,0,1"></Rectangle>
+
+            <StackPanel  Grid.Row="3"  Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="{Binding pStartStation.DisplayName}"  Foreground="#323232" VerticalAlignment="Bottom" HorizontalAlignment="Left"  Grid.Row="1" FontSize="30" Margin="5,-7,-5,0" TextAlignment="Center"  />
+                <Image Source="/Assets/Icons/black_arrow.png" Height="46" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,4,0,0"></Image>
+                <TextBlock Text="{Binding pEndStation.DisplayName}" VerticalAlignment="Bottom" HorizontalAlignment="Left"  Grid.Row="1" FontSize="30" Margin="-5,-7,5,0" TextAlignment="Center"  />
+            </StackPanel>
+            <Rectangle Fill="Gray"  Grid.Column ="1" Grid.RowSpan="4" VerticalAlignment="Stretch" Margin="1,0,1,0"></Rectangle>
+            <StackPanel Grid.Row="0" Grid.Column="2" Grid.RowSpan="4" Margin="10,0,0,0" VerticalAlignment="Center">
+                <StackPanel Visibility="{Binding pEveryDayTrainVisibility}" Orientation="Horizontal"  >
+                    <Image  Source="/Assets/Icons/EveryDay.png" Width="16" Height="16" ></Image>
+                    <TextBlock Text="每天行駛"></TextBlock>
+                </StackPanel>
+                <Grid Visibility="{Binding pNotDailyTrainNoteVisibility}" Margin="0,0,5,0">
+                    <TextBlock Text="{Binding pNotDailyTrainNoteString}" TextWrapping="Wrap"></TextBlock>
+                </Grid>
+                <StackPanel Visibility="{Binding pIrregularTrainVisibility}" Orientation="Horizontal"  >
+                    <Image  Source="/Assets/Icons/OneMore.png" Width="16" Height="16" ></Image>
+                    <TextBlock Text="{Binding pIrregularTrainString}"></TextBlock>
+                </StackPanel>
+                <StackPanel Visibility="{Binding pBikeVisibility}" Orientation="Horizontal"  >
+                    <Image Visibility="{Binding pBikeVisibility}"  Source="/Assets/Icons/Bike.png" Width="16" Height="16" Grid.Column="0"></Image>
+                    <TextBlock Text="攜車袋之自行車"></TextBlock>
+                </StackPanel>
+                <StackPanel Visibility="{Binding pCrippleVisibility}" Orientation="Horizontal"  >
+                    <Image  Source="/Assets/Icons/Cripple.png" Width="16" Height="16" ></Image>
+                    <TextBlock Text="身障專用座位"></TextBlock>
+                </StackPanel>
+                <StackPanel Visibility="{Binding pMilkVisibility}" Orientation="Horizontal"  >
+                    <Image Source="/Assets/Icons/Milk.png" Width="16" Height="16" ></Image>
+                    <TextBlock Text="哺(集)乳室"></TextBlock>
+                </StackPanel>
+
+                <StackPanel Visibility="{Binding pDinningVisibility}" Orientation="Horizontal"  >
+                    <Image  Source="/Assets/Icons/Dinning.png" Width="16" Height="16" ></Image>
+                    <TextBlock Text="附掛餐車"></TextBlock>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+       
+        <Rectangle Fill="#323232" Grid.Row="1" HorizontalAlignment="Stretch" Margin="0,0,0,1"></Rectangle>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="160"></ColumnDefinition>
+                <ColumnDefinition Width="160"></ColumnDefinition>
+                <ColumnDefinition Width="160"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" Background="LightBlue" BorderThickness="0,1,1,2" BorderBrush="#828282" >
+                <TextBlock Text="站名" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+            </Border>
+            <Border Grid.Column="1" Background="LightBlue" BorderThickness="0,1,0,2" BorderBrush="#828282" >
+                <TextBlock Text="到達" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+            </Border>
+            <Border Grid.Column="2" Background="LightBlue" BorderThickness="1,1,0,2" BorderBrush="#828282" >
+                <TextBlock Text="出發" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+            </Border>
+        </Grid>
+        <phone:LongListSelector x:Name="llTimeInfoList" ItemsSource="{Binding pTimeInfoList, Mode=TwoWay}" ItemTemplate="{StaticResource dtStation}" Grid.Row="3"></phone:LongListSelector>
+    </Grid>
+
+</phone:PhoneApplicationPage>

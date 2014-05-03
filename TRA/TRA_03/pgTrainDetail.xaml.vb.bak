@@ -1,0 +1,67 @@
+﻿Imports System.Windows.Data
+Imports System.ComponentModel
+Imports TRA_03.GlobalVariables
+
+Partial Public Class pgTrainDetail
+    Inherits PhoneApplicationPage 
+     
+
+    Public Property pTrain As clsTrain
+
+    Public Sub New()
+        InitializeComponent() 
+    End Sub
+
+    Protected Overrides Sub OnNavigatedTo(e As NavigationEventArgs) 
+        pTrain = gTrainToShow
+        pTrain.SetClosetSt()
+        Me.DataContext = pTrain
+    End Sub
+    Private Sub pgTrainDetail_Loaded(sender As Object, e As RoutedEventArgs) Handles Me.Loaded
+
+    End Sub  
+
+    Private Sub abtnUpdateStatus_Click(sender As Object, e As EventArgs)
+        pTrain.UpdateStatusOnline() 
+    End Sub 
+
+    Private Sub abtnUpdate_Click(sender As Object, e As EventArgs)
+        pTrain.SetClosetSt() 
+    End Sub
+End Class
+
+Public Class dcStBg
+    Implements IValueConverter
+
+    Public Function Convert(value As Object, targetType As Type, parameter As Object, culture As Globalization.CultureInfo) As Object Implements IValueConverter.Convert
+        Dim _Value As Double = CDbl(value)
+        If _Value Mod 2 = 0 Then
+            Return "LightGray"
+        Else
+            Return "White"
+        End If
+        Return "White"
+    End Function
+
+    Public Function ConvertBack(value As Object, targetType As Type, parameter As Object, culture As Globalization.CultureInfo) As Object Implements IValueConverter.ConvertBack
+        Return Nothing
+    End Function
+End Class
+
+Public Class dcStForeground
+    Implements IValueConverter
+
+    Public Function Convert(value As Object, targetType As Type, parameter As Object, culture As Globalization.CultureInfo) As Object Implements IValueConverter.Convert
+        If CBool(value) Then
+            Return "Red"
+        End If
+
+        Return "#323232"
+    End Function
+
+    Public Function ConvertBack(value As Object, targetType As Type, parameter As Object, culture As Globalization.CultureInfo) As Object Implements IValueConverter.ConvertBack
+        Return Nothing
+    End Function
+End Class
+
+

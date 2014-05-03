@@ -1,0 +1,299 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="TRA_03.pgFavorite"
+    xmlns:this="clr-namespace:TRA_03"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    FontFamily="Microsoft Mhei" 
+    FontWeight="Bold"  
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="#323232"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+    <phone:PhoneApplicationPage.Resources>
+        <DataTemplate x:Key="dtDisplayNameLP">
+            <StackPanel HorizontalAlignment="Center" >
+                <TextBlock  TextAlignment="Center" Text="{Binding DisplayName}" FontFamily="Microsoft Mhei" FontWeight="Bold"></TextBlock>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="dtFullModelDisplayNameLP">
+            <TextBlock Text="{Binding DisplayName}" Foreground="{Binding pHLColor}" FontSize="30" FontFamily="Microsoft Mhei" FontWeight="Bold"></TextBlock>
+        </DataTemplate>
+        <DataTemplate x:Key="dtDisplayNameShortLP">
+            <StackPanel >
+                <TextBlock  TextAlignment="Center" Text="{Binding DisplayNameShort}" Width="90" FontFamily="Microsoft Mhei" FontWeight="Bold"></TextBlock>
+            </StackPanel>
+        </DataTemplate>
+        <Style x:Key="styleLP" TargetType="toolkit:ListPicker">
+            <Setter Property="Background" Value="{StaticResource PhoneTextBoxBrush}"/>
+            <Setter Property="Foreground" Value="{StaticResource PhoneTextBoxForegroundBrush}"/>
+            <Setter Property="FontSize" Value="{StaticResource PhoneFontSizeMediumLarge}"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="toolkit:ListPicker">
+                        <StackPanel>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="PickerStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="Expanded">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Border" Storyboard.TargetProperty="Background" Duration="0">
+                                                <DiscreteObjectKeyFrame  Value="{StaticResource PhoneTextBoxEditBackgroundColor}" KeyTime="0"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Border" Storyboard.TargetProperty="BorderBrush" Duration="0">
+                                                <DiscreteObjectKeyFrame  Value="{StaticResource PhoneTextBoxEditBorderBrush}" KeyTime="0"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <ContentControl Foreground="{StaticResource PhoneSubtleBrush}" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="0"/>
+                            <Grid>
+                                <Border x:Name="Border" Background="White" BorderBrush="#323232" BorderThickness="4" Height="50">
+                                    <Canvas x:Name="ItemsPresenterHost" MinHeight="46" HorizontalAlignment="Left" >
+                                        <ItemsPresenter   x:Name="ItemsPresenter" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                            <ItemsPresenter.RenderTransform>
+                                                <TranslateTransform x:Name="ItemsPresenterTranslateTransform"/>
+                                            </ItemsPresenter.RenderTransform>
+                                        </ItemsPresenter>
+                                    </Canvas>
+                                </Border>
+                                <Popup x:Name="FullModePopup">
+                                    <Border Background="{StaticResource PhoneChromeBrush}">
+                                        <!-- Popup.Child should always be a Border -->
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <ContentControl 
+                                            Grid.Row="0" 
+                                            Content="{TemplateBinding FullModeHeader}" Foreground="{StaticResource PhoneForegroundBrush}" FontFamily="{StaticResource PhoneFontFamilySemiBold}" FontSize="{StaticResource PhoneFontSizeMedium}" 
+                                            HorizontalAlignment="Left" Margin="24 12 0 0"/>
+                                            <ListBox x:Name="FullModeSelector" Grid.Row="1" 
+                                            ItemTemplate="{TemplateBinding FullModeItemTemplate}" FontSize="{TemplateBinding FontSize}" Margin="{StaticResource PhoneMargin}">
+                                                <ListBox.ItemsPanel>
+                                                    <ItemsPanelTemplate>
+                                                        <StackPanel/>
+                                                    </ItemsPanelTemplate>
+                                                </ListBox.ItemsPanel>
+                                            </ListBox>
+                                        </Grid>
+                                    </Border>
+                                </Popup>
+                            </Grid>
+                        </StackPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <DataTemplate x:Key="dtLongTicket" >
+            <UserControl>
+                <Border x:Name="bdHL" BorderBrush="#323232" BorderThickness="0" CornerRadius="3" Background="Transparent">
+                    <VisualStateManager.VisualStateGroups  >
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal" />
+                            <VisualState x:Name="Selected">
+                                <Storyboard>
+                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderThickness" Storyboard.TargetName="bdHL">
+                                        <DiscreteObjectKeyFrame KeyTime="0" Value="3"/>
+                                    </ObjectAnimationUsingKeyFrames>
+                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="btShowDetail">
+                                        <DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+                                    </ObjectAnimationUsingKeyFrames>
+                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="bdCheckMark">
+                                        <DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+                                    </ObjectAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                    <Grid Visibility="{Binding pVisibility}" Height="95">
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition Height="5"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Rectangle Fill="DarkGray" Grid.Row="1" Height ="1" Margin="0,2"  HorizontalAlignment="Stretch"></Rectangle>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="10"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Rectangle  Fill="{Binding pTrainClassColor}" Grid.Column="2" VerticalAlignment="Stretch" />
+                            <Grid Grid.Column="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Rectangle Fill="{Binding pTrainClassColor}" Width="3" Margin="10,2,0,2"  HorizontalAlignment="Left"></Rectangle>
+                                <TextBlock Text="{Binding pTrainClassCht}" Grid.Column="1" Foreground="{Binding pTrainClassColor}" FontFamily="Microsoft Mhei"  FontWeight="ExtraBold"  VerticalAlignment="Bottom" HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="32" Margin="0" Width="32"/>
+                                <TextBlock Text="{Binding pTrainClassDescriptionCht}" Grid.Column="1" Foreground="#323232" FontFamily="Microsoft Mhei"  FontWeight="ExtraBold" VerticalAlignment="Top"  HorizontalAlignment="Center" TextWrapping="NoWrap" Margin="0" FontSize="10" />
+                            </Grid>
+                            <TextBlock Text="{Binding pTrainID}" Foreground="#323232" FontFamily="Microsoft Mhei"  FontWeight="ExtraBold" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="-32,0,0,0" TextAlignment="Center"    RenderTransformOrigin="0.5,0.5">
+                                <TextBlock.RenderTransform>
+                                    <CompositeTransform Rotation="-90"/>
+                                </TextBlock.RenderTransform>
+                            </TextBlock>
+
+                            <Grid Grid.Column ="1"  >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="3*"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="7*"></ColumnDefinition>
+                                        <ColumnDefinition Width="6*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                </Grid>
+                                <StackPanel Visibility="{Binding pTimeDisplayMode1Visibility}" Grid.Column="0" Orientation="Horizontal" >
+                                    <Border VerticalAlignment="Top" HorizontalAlignment="Left"  Margin="5,8,3,0" Background="DarkGreen" >
+                                        <TextBlock Text="準點" Visibility="{Binding pOnTimeFlag}" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" Width="21" FontSize="21" Foreground="#323232" FontFamily="Microsoft Mhei"  FontWeight="ExtraBold" ></TextBlock>
+                                    </Border>
+                                    <TextBlock Text="{Binding pTimeInfo_Dep.pDisplayDepTime}" Foreground="#323232" FontFamily="Microsoft Mhei"  FontWeight="ExtraBold" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,-10,0,0" FontSize="65"></TextBlock>
+                                </StackPanel>
+                                <StackPanel Visibility="{Binding pTimeDisplayMode2Visibility}" Grid.Column="0" Orientation="Horizontal">
+                                    <TextBlock Text="{Binding pTimeInfo_Dep.pDisplayDepTime}" Foreground="#323232" FontFamily="Microsoft Mhei"  FontWeight="ExtraBold" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="2,-10,0,0" FontSize="60"/>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition></RowDefinition>
+                                            <RowDefinition></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Border VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,5,0,0" Background="darkRed" >
+                                            <TextBlock Text="誤點" Visibility="{Binding pDelayFlag}" VerticalAlignment="Center" Padding="1,0,0,1" HorizontalAlignment="Center" Foreground="#323232" FontFamily="Microsoft Mhei"  FontWeight="ExtraBold" ></TextBlock>
+                                        </Border>
+                                        <TextBlock Text="{Binding pDelaySpan}" Visibility="{Binding pDelayFlag}" Grid.Row="1"  HorizontalAlignment="Left" FontSize="25" Foreground="Red" FontFamily="Microsoft Mhei"  FontWeight="ExtraBold" ></TextBlock>
+                                    </Grid>
+                                </StackPanel>
+                                <StackPanel Grid.Column="1" Orientation="Vertical">
+                                    <TextBlock Text="{Binding pFromEndStString}" Foreground="#323232" FontFamily="Microsoft Mhei"  FontWeight="ExtraBold" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,-5,0,0"  FontSize="30"></TextBlock>
+                                    <TextBlock Text="{Binding pTimeInfo_Arr.pDisplayArrTime}" Foreground="#323232" FontFamily="Microsoft Mhei"  FontWeight="ExtraBold" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,-15,0,0" FontSize="40"></TextBlock>
+                                </StackPanel>
+                                <Grid Grid.Row="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="{Binding pEstTimeString}" Grid.Column="0" Foreground="Black" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="20" Margin="5,0,0,0"></TextBlock>
+                                    <TextBlock Text="{Binding pTimeSpan}" Grid.Column="2" Foreground="Black" VerticalAlignment="Bottom" HorizontalAlignment="Right"   FontSize="20" Margin="0,-5,2,0"></TextBlock>
+                                    <Grid Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="22" Width="120" Background="Transparent"  >
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Visibility="{Binding pBikeVisibility}"  Source="/Assets/Icons/Bike.png" Width="16" Height="16" Grid.Column="0"></Image>
+                                        <Image Visibility="{Binding pCrippleVisibility}" Source="/Assets/Icons/Cripple.png" Width="16" Height="16" Grid.Column="1"></Image>
+                                        <Image Visibility="{Binding pMilkVisibility}" Source="/Assets/Icons/Milk.png" Width="16" Height="16" Grid.Column="2"></Image>
+                                        <Image Visibility="{Binding pOverNightVisibility}" Source="/Assets/Icons/Night.png" Width="16" Height="16" Grid.Column="3"></Image>
+                                        <Image Visibility="{Binding pEveryDayTrainVisibility}" Source="/Assets/Icons/EveryDay.png" Width="16" Height="16" Grid.Column="4"></Image>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                        <Button x:Name="btShowDetail"  FontFamily="Microsoft Mhei"  FontWeight="ExtraBold" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,-7"   Height="70" Width="240"  Background="DarkGray" Foreground="#323232" Opacity="0.8" Visibility="Collapsed"
+                                Click="btShowDetail_Click">顯示完整列車資訊</Button>
+                        <Border x:Name="bdCheckMark" Visibility="Collapsed" BorderBrush="#323232" BorderThickness="0,0,3,3" CornerRadius="0,0,3,0" Width="24" Height="24" HorizontalAlignment="Left" VerticalAlignment="Top">
+                            <Canvas Background="{Binding pTrainClassColor}">
+                                <Polyline Stroke="#323232"  StrokeThickness="4">
+                                    <Polyline.Points>
+                                        <Point>4,9</Point>
+                                        <Point>11,16</Point>
+                                        <Point>19,2</Point>
+                                    </Polyline.Points>
+                                </Polyline>
+                            </Canvas>
+                        </Border>
+                    </Grid>
+                </Border>
+            </UserControl>
+        </DataTemplate>
+        <this:BooleanVisiblityConv x:Key="cvtBooleanVisibility"></this:BooleanVisiblityConv>
+        <this:RvsBooleanVisiblityConv  x:Key="cvtRevBooleanVisibility"></this:RvsBooleanVisiblityConv>
+    </phone:PhoneApplicationPage.Resources>
+    <phone:PhoneApplicationPage.ApplicationBar >
+        <shell:ApplicationBar>
+            <shell:ApplicationBarIconButton x:Name="abtnUpdateStatus" IconUri="Assets/Icons/magnify_down.png" Text="查誤點"/>
+            <shell:ApplicationBarIconButton x:Name="abtnExhange" IconUri="Assets/Icons/exchange.png" Text="起訖互換"
+                                            Click="abtnExhange_Click"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+    <Grid x:Name="LayoutRoot" Background="White" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="2"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="2"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Fill="#323232" Grid.Row="1" HorizontalAlignment="Stretch" Margin="0"></Rectangle>
+        <Rectangle Fill="#323232" Grid.Row="3" HorizontalAlignment="Stretch" Margin="0"></Rectangle>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"></ColumnDefinition>
+                <ColumnDefinition Width="40"></ColumnDefinition>
+                <ColumnDefinition Width="120"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="{Binding pStation_S.DisplayName}" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32"></TextBlock>
+            <TextBlock Text="{Binding pStation_E.DisplayName}" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32"></TextBlock>
+            <Image Grid.Column="1" Source="/Assets/Icons/black_arrow.png" Width="50" HorizontalAlignment="Center"></Image>
+           
+            <Rectangle Width="2" Grid.Column="3" Fill="#323232" VerticalAlignment="Stretch" HorizontalAlignment="Left"  ></Rectangle>
+            <Grid  Grid.Column="3"  Margin="3,5,0,5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="11*"></ColumnDefinition>
+                    <ColumnDefinition Width="9*"></ColumnDefinition>
+                    <ColumnDefinition Width="9*"></ColumnDefinition>
+                    <ColumnDefinition Width="9*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions >
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="太/新" Grid.Column="0" Foreground="{Binding pColor_PNTZ}" Visibility="{Binding pVisibility_PNTZ,Converter={StaticResource cvtBooleanVisibility}}" VerticalAlignment="Bottom"></TextBlock>
+                <TextBlock Text="太/新" Grid.Column="0" Foreground="#D8D8D8" Visibility="{Binding pVisibility_PNTZ,Converter={StaticResource cvtRevBooleanVisibility }}" VerticalAlignment="Bottom"></TextBlock>
+                <TextBlock Text="自強" Grid.Column="1" Foreground="{Binding pColor_TZ}" VerticalAlignment="Bottom" Visibility="{Binding pVisibility_TZ,Converter={StaticResource cvtBooleanVisibility}}" ></TextBlock>
+                <TextBlock Text="自強" Grid.Column="1" Foreground="#D8D8D8" VerticalAlignment="Bottom" Visibility="{Binding pVisibility_TZ,Converter={StaticResource cvtRevBooleanVisibility }}"></TextBlock>
+                <TextBlock Text="莒光" Grid.Column="2" Foreground="{Binding pColor_CK}" VerticalAlignment="Bottom" Visibility="{Binding pVisibility_CK,Converter={StaticResource cvtBooleanVisibility}}" ></TextBlock>
+                <TextBlock Text="莒光" Grid.Column="2" Foreground="#D8D8D8" VerticalAlignment="Bottom" Visibility="{Binding pVisibility_CK,Converter={StaticResource cvtRevBooleanVisibility }}"></TextBlock>
+                <TextBlock Text="區間" Grid.Column="3" Foreground="{Binding pColor_Local}" VerticalAlignment="Bottom" Visibility="{Binding pVisibility_Local,Converter={StaticResource cvtBooleanVisibility}}" ></TextBlock>
+                <TextBlock Text="區間" Grid.Column="3" Foreground="#D8D8D8" VerticalAlignment="Bottom" Visibility="{Binding pVisibility_Local,Converter={StaticResource cvtRevBooleanVisibility }}"></TextBlock>
+
+                <TextBlock Text="{Binding pPriceTZ}" Grid.Row="1" Grid.Column="0" Foreground="{Binding pColor_PNTZ}" Visibility="{Binding pVisibility_PNTZ,Converter={StaticResource cvtBooleanVisibility}}" VerticalAlignment="Bottom" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock Text="{Binding pPriceTZ}" Grid.Row="1" Grid.Column="1" Foreground="{Binding pColor_TZ}" VerticalAlignment="Bottom" Visibility="{Binding pVisibility_TZ,Converter={StaticResource cvtBooleanVisibility}}" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock Text="{Binding pPriceCK}" Grid.Row="1" Grid.Column="2" Foreground="{Binding pColor_CK}" VerticalAlignment="Bottom" Visibility="{Binding pVisibility_CK,Converter={StaticResource cvtBooleanVisibility}}" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock Text="{Binding pPriceLocal}" Grid.Row="1" Grid.Column="3" Foreground="{Binding pColor_Local}" VerticalAlignment="Bottom" Visibility="{Binding pVisibility_Local,Converter={StaticResource cvtBooleanVisibility}}" HorizontalAlignment="Center"></TextBlock> 
+            </Grid>
+           
+        </Grid>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="15,10,0,0">
+            <toolkit:ListPicker x:Name="lpSESearchTimeTable" Grid.Row="0" Margin="0,0,6,5" VerticalAlignment="Top" Width="150" ExpansionMode="FullScreenOnly" 
+                                Style="{StaticResource styleLP}" ItemTemplate="{StaticResource dtDisplayNameShortLP}" FullModeItemTemplate="{StaticResource dtFullModelDisplayNameLP}"
+                                ItemsSource="{Binding pSchedule}" SelectedItem="{Binding pSelectedTimeTable}" FullModeHeader="切換時刻表後,系統將需要幾秒鐘讀取列車資訊"
+                                SelectionChanged="lpSESearchTimeTable_SelectionChanged"
+                                ></toolkit:ListPicker>
+            <toolkit:TimePicker x:Name="tpSESearchStart" Value="{Binding pDepTime_S}" Margin="0,-10,-7,0" BorderBrush="#323232" Foreground="#323232" FontFamily="Calibri" FontWeight="ExtraBold" BorderThickness="4"
+                                            ValueChanged="tpSESearchStart_ValueChanged"></toolkit:TimePicker>
+            <Rectangle Width="9" Margin="0,0,0,34" Height="3" Fill="#323232" VerticalAlignment="Bottom"></Rectangle>
+            <toolkit:TimePicker x:Name="tpSESearchEnd" Value="{Binding pDepTime_E}" Margin="-7,-10,10,0" BorderBrush="#323232" Foreground="#323232" FontFamily="Calibri" FontWeight="ExtraBold" BorderThickness="4"
+                                            ValueChanged="tpSESearchEnd_ValueChanged"></toolkit:TimePicker>
+        </StackPanel>
+        <phone:LongListSelector x:Name="llsTickets" Grid.Row="4"  LayoutMode="List" ItemsSource="{Binding pTrainList}" ItemTemplate="{StaticResource dtLongTicket}" Margin="5,0,0,0"
+                                SelectionChanged="llsTickets_SelectionChanged"/>
+    </Grid>
+
+</phone:PhoneApplicationPage>
