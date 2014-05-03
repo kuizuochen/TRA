@@ -179,6 +179,9 @@ Public Class clsStation
     Public mEnName As String
     Public mShowCh As Boolean = True
 
+    Public mLat As Double = 0
+    Public mLng As Double = 0
+
     Public mIsHandShakeStop As Boolean = False
      
     Public mIDsInPart As New List(Of Integer)
@@ -270,7 +273,12 @@ Public Class clsStation
                 mDisplayLineNameStringSize = 20
         End Select
     End Sub
-     
+
+    Public Sub New(ID As Integer, ChName As String, EnName As String, tLevel As Integer, tLat As Double, tLng As Double)
+        Me.New(ID, ChName, EnName, tLevel)
+        mLat = tLat
+        mLng = tLng
+    End Sub
 
     Public Function Clone() As clsStation
         Dim aStation As New clsStation(mID, mChName, mEnName, mLevel)

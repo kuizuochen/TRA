@@ -10,10 +10,6 @@ TRA_03
 	<summary>
 InitializeComponent
 </summary>
-</member><member name="M:TRA_03.pgTrainDetail.InitializeComponent">
-	<summary>
-InitializeComponent
-</summary>
 </member><member name="P:TRA_03.AppResources.ResourceManager">
 	<summary>
   Returns the cached ResourceManager instance used by this class.
@@ -84,19 +80,23 @@ InitializeComponent
 	<summary>
  Constructor for the Application object.
  </summary>
+</member><member name="M:TRA_03.pgTrainDetail.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
 </member><member name="T:TRA_03.LocalizedStrings">
 	<summary>
  Provides access to string resources.
  </summary>
-</member><member name="M:TRA_03.dfStationGrp.InitializeComponent">
-	<summary>
-InitializeComponent
-</summary>
 </member><member name="M:TRA_03.App.InitializeComponent">
 	<summary>
 InitializeComponent
 </summary>
 </member><member name="M:TRA_03.MainPage.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="M:TRA_03.dfStationGrp.InitializeComponent">
 	<summary>
 InitializeComponent
 </summary>
