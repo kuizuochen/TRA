@@ -38,8 +38,9 @@ Public Class vmLocationSearch
             Return _PNTZ + "_" + _TZ + "_" + _CK + "_" + _Local
         End Get
     End Property
+    
     Public Property pStGrpList As ObservableCollection(Of clsStGrp)
-    Public mStGrp As clsStGrp
+    Public mStGrp As clsStGrp 
     Public Property pStGrp As clsStGrp
         Get
             Return mStGrp

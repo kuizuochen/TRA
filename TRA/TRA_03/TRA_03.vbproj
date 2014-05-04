@@ -260,6 +260,7 @@
     <Content Include="Assets\Icons\EveryDay.png" />
     <Content Include="Assets\Icons\exchange.png" />
     <Content Include="Assets\Icons\facebook.png" />
+    <Content Include="Assets\Icons\geoloc.png" />
     <Content Include="Assets\Icons\globe.png" />
     <Content Include="Assets\Icons\logo.png" />
     <Content Include="Assets\Icons\magnify_down.png" />

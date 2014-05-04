@@ -10,6 +10,7 @@ Imports System.IO.IsolatedStorage
 Imports Microsoft.Phone.BackgroundTransfer
 Imports System.ComponentModel
 Imports System.Net.NetworkInformation
+Imports Windows.Devices.Geolocation
 
 Partial Public Class MainPage
     Inherits PhoneApplicationPage
@@ -30,7 +31,12 @@ Partial Public Class MainPage
 
     Private SESearchTrainListUpdate_Pause As Boolean = False
     Private SESearchTrainListUpdate_SwitchPause As Boolean = False
+
+
+    '' Location Search 
     Private LocSchTrainListUpdate_Pause As Boolean = False
+    Private LocSchTrainListUpdate_Geo As Boolean = False
+
 
     ''for update
     Public mCurrentRequest As BackgroundTransferRequest = Nothing
@@ -113,7 +119,7 @@ Partial Public Class MainPage
         LocSch_ScrollToCloestTrain()
 
     End Sub
-  
+
 
     Public Shared Sub GetItemsRecursive(Of T As DependencyObject)(parents As DependencyObject, ByRef objectList As List(Of T))
         Dim childrenCount = VisualTreeHelper.GetChildrenCount(parents)
@@ -163,7 +169,7 @@ Partial Public Class MainPage
             CType(DataContext, vmMain).SaveToIsoSetting()
         Catch ex As Exception
 
-        End Try 
+        End Try
     End Sub
 
     Private Sub abtnMyFavoriteRefresh_Click(sender As Object, e As EventArgs)
@@ -265,15 +271,17 @@ Partial Public Class MainPage
     End Sub
     Private Sub lpLocationSearchSt_SelectionChanged(sender As Object, e As SelectionChangedEventArgs)
         If mInitializeState = True Then Exit Sub
-        If LocSchTrainListUpdate_Pause = True Then Exit Sub 
+        If LocSchTrainListUpdate_Pause = True Then Exit Sub
+        If LocSchTrainListUpdate_Geo = True Then Exit Sub
 
         CType(Me.DataContext, vmMain).pLocSchVM.pStation = lpLocationSearchSt.SelectedItem
 
         CType(Me.DataContext, vmMain).pLocSchVM.UpdateTrainList()
-        LocSch_ScrollToCloestTrain() 
+        LocSch_ScrollToCloestTrain()
     End Sub
     Private Sub lpLocationSearchStGrp_SelectionChanged(sender As Object, e As SelectionChangedEventArgs)
-        If mInitializeState = True Then Exit Sub 
+        If mInitializeState = True Then Exit Sub
+        If LocSchTrainListUpdate_Geo = True Then Exit Sub
         CType(Me.DataContext, vmMain).pLocSchVM.pStGrp = lpLocationSearchStGrp.SelectedItem
 
         LocSchTrainListUpdate_Pause = True
@@ -286,7 +294,7 @@ Partial Public Class MainPage
         For i As Integer = 0 To CType(Me.DataContext, vmMain).pLocSchVM.pStGrp.mStation.Count - 1
             If CType(Me.DataContext, vmMain).pLocSchVM.pStGrp.mFirstSelectedStName = CType(Me.DataContext, vmMain).pLocSchVM.pStGrp.mStation.Item(i).mChName Then
                 Try
-                    lpLocationSearchSt.SelectedIndex = i 
+                    lpLocationSearchSt.SelectedIndex = i
                 Catch ex As Exception
 
                 End Try
@@ -324,7 +332,7 @@ Partial Public Class MainPage
         Catch ex As Exception
         End Try
     End Sub
-     
+
     Private Sub llsLocSchFW_SelectionChanged(sender As Object, e As SelectionChangedEventArgs)
         Dim userControlList As New List(Of UserControl)()
         GetItemsRecursive(Of UserControl)(llsLocSchFW, userControlList)
@@ -367,6 +375,57 @@ Partial Public Class MainPage
                 End If
             Next
         End If
+    End Sub
+
+    Private Sub btnGetCloestSt_Click(sender As Object, e As RoutedEventArgs)
+        pbGetGeoLoc.IsIndeterminate = True
+        GetCurrentLoc()
+
+    End Sub
+
+    ''取得 Geolocation
+    Private Async Sub GetCurrentLoc()
+
+        Try
+            Dim _CloestSt As clsStation
+            Dim _Finder As New Geolocator
+            Dim _CurrentLoc As Geoposition
+            _Finder.DesiredAccuracyInMeters = UInt32.Parse(200)
+            _Finder.DesiredAccuracy = PositionAccuracy.Default
+
+            _CurrentLoc = Await _Finder.GetGeopositionAsync(TimeSpan.FromMinutes(1), TimeSpan.FromSeconds(30)) 
+            _CloestSt = clsStation.GetCloestSt(gStList, _CurrentLoc)
+
+
+            LocSchTrainListUpdate_Geo = True
+
+            CType(Me.DataContext, vmMain).pLocSchVM.pStGrp = clsStGrp.GetRegion(CType(Me.DataContext, vmMain).pLocSchVM.pStGrpList, _CloestSt.mID)
+            lpLocationSearchStGrp.SelectedItem = CType(Me.DataContext, vmMain).pLocSchVM.pStGrp
+
+            CType(Me.DataContext, vmMain).pLocSchVM.pStList.Clear()
+            For i As Integer = 0 To CType(Me.DataContext, vmMain).pLocSchVM.pStGrp.mStation.Count - 1
+                CType(Me.DataContext, vmMain).pLocSchVM.pStList.Add(CType(Me.DataContext, vmMain).pLocSchVM.pStGrp.mStation.Item(i))
+            Next
+
+            For i As Integer = 0 To CType(Me.DataContext, vmMain).pLocSchVM.pStList.Count - 1
+                If _CloestSt.mChName = CType(Me.DataContext, vmMain).pLocSchVM.pStList.Item(i).mChName Then
+                    Try
+                        lpLocationSearchSt.SelectedIndex = i
+                    Catch ex As Exception
+
+                    End Try
+                End If
+            Next
+
+            LocSchTrainListUpdate_Geo = False
+            lpLocationSearchSt_SelectionChanged(Nothing, Nothing)
+
+        Catch ex As Exception
+
+        End Try
+
+        LocSchTrainListUpdate_Geo = False
+        pbGetGeoLoc.IsIndeterminate = False
     End Sub
 #End Region
 
@@ -553,7 +612,7 @@ Partial Public Class MainPage
         SESearch_ScrollToCloestTrain()
     End Sub
     Private Sub tpSESearchStart_ValueChanged(sender As Object, e As DateTimeValueChangedEventArgs)
-        If mInitializeState = True Then Exit Sub 
+        If mInitializeState = True Then Exit Sub
         Dim _OneHour As TimeSpan = New TimeSpan(1, 0, 0)
 
         CType(Me.DataContext, vmMain).pSESchVM.pDepTime_S = CType(sender, TimePicker).Value
@@ -600,7 +659,7 @@ Partial Public Class MainPage
 
         NavigationService.Navigate(New Uri("/pgTrainDetail.xaml", UriKind.RelativeOrAbsolute))
     End Sub
-    Private Sub llsTickets_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) 
+    Private Sub llsTickets_SelectionChanged(sender As Object, e As SelectionChangedEventArgs)
         Dim userControlList As New List(Of UserControl)()
         GetItemsRecursive(Of UserControl)(llsTickets, userControlList)
 
@@ -621,7 +680,7 @@ Partial Public Class MainPage
             Next
         End If
     End Sub
-  
+
 #End Region
 
 #Region "Main Pivot"
@@ -634,7 +693,7 @@ Partial Public Class MainPage
             llsLocSchBW.SelectedItem = Nothing
         Catch ex As Exception
 
-        End Try 
+        End Try
     End Sub
     Private Sub Pivot_SelectionChanged(sender As Object, e As SelectionChangedEventArgs)
         ''   If mInitializeState = True Then Exit Sub 
@@ -829,9 +888,6 @@ Partial Public Class MainPage
     End Sub
 #End Region
 #End Region
-
-
-
 
 
 End Class

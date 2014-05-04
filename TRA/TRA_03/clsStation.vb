@@ -1,5 +1,8 @@
 ﻿Imports System.ComponentModel
 Imports System.Collections.ObjectModel
+Imports System.Device.Location
+Imports Windows.Devices.Geolocation
+
 
 '主要幹線(對號快車)
 '  西部幹線對號快車逆行	東部幹線對號快車逆行	南迴線逆行
@@ -73,7 +76,7 @@ Public Enum Part As Integer
     EL_ELR = 16
     EL_ELF = 17
     EL_N = 18
-    EL_TD = 19 
+    EL_TD = 19
 
     '支線(非對號快車)
     '  平溪線	內灣/六家線	 集集線	沙崙線
@@ -81,8 +84,56 @@ Public Enum Part As Integer
     BL_NW = 21
     BL_LG = 22
     BL_GG = 23
-    BL_SL = 24 
+    BL_SL = 24
 End Enum
+
+Public Class clsStGrp_S
+    Implements INotifyPropertyChanged
+
+    Public mChName As String
+    Public mEnName As String 
+
+    Public mShowCh As Boolean = True
+     
+    Public Property pHLColor As String = "White"
+    Public ReadOnly Property DisplayName As String
+        Get
+            If mShowCh Then
+                Return mChName
+            Else
+                Return mEnName
+            End If
+        End Get
+    End Property
+
+    Public Sub New(tStGrp As clsStGrp)
+        mChName = tStGrp.mChName
+        mEnName = tStGrp.mEnName
+        pHLColor = tStGrp.mHLColor
+    End Sub
+
+    Public Sub New(tChName As String, tEnName As String, tHLColor As String)
+        mChName = tChName
+        mEnName = tEnName
+        pHLColor = tHLColor
+    End Sub
+
+    Public Function Clone() As clsStGrp_S
+        Return New clsStGrp_S(Me.mChName, Me.mEnName, Me.pHLColor)
+    End Function
+
+    Public Shared Function GetStGrp(ByRef tStGrpList As ObservableCollection(Of clsStGrp_S), tStGrp As clsStGrp) As clsStGrp_S
+        For i As Integer = 0 To tStGrpList.Count - 1
+            If tStGrpList.Item(i).mChName = tStGrp.mChName Then
+                Return tStGrpList.Item(i)
+            End If
+        Next
+
+        Return Nothing
+    End Function
+
+    Public Event PropertyChanged(sender As Object, e As PropertyChangedEventArgs) Implements INotifyPropertyChanged.PropertyChanged
+End Class
 
 Public Class clsStGrp
     Implements INotifyPropertyChanged
@@ -183,7 +234,7 @@ Public Class clsStation
     Public mLng As Double = 0
 
     Public mIsHandShakeStop As Boolean = False
-     
+
     Public mIDsInPart As New List(Of Integer)
     Public Property pHLColor As String = "Yellow"
     Public Property pDisplayLineName1 As String
@@ -304,24 +355,24 @@ Public Class clsStation
         Next
         Return New clsStation(-1, "", "")
     End Function
- 
+
     Public Shared Function GetStationByID(tGrpList As ObservableCollection(Of clsStGrp), tID As String) As clsStation
         For i As Integer = 0 To tGrpList.Count - 1
             For j As Integer = 0 To tGrpList.Item(i).mStation.Count - 1
                 If tGrpList.Item(i).mStation.Item(j).mID = tID Then
                     Return tGrpList.Item(i).mStation.Item(j)
                 End If
-            Next 
+            Next
         Next
         Return New clsStation(-1, "", "")
     End Function
 
     Public Shared Function GetStationByID(tStList As List(Of clsStation), tID As String) As clsStation
-        For i As Integer = 0 To tStList.Count - 1 
+        For i As Integer = 0 To tStList.Count - 1
             If tStList.Item(i).mID = tID Then
                 Return tStList.Item(i)
             End If
-            Next 
+        Next
         Return New clsStation(-1, "", "")
     End Function
 
@@ -435,6 +486,24 @@ Public Class clsStation
         End Select
 
         Return ""
+    End Function
+
+    Public Shared Function GetCloestSt(StList As List(Of clsStation), tCurrentGeoLoc As GeoPosition) As clsStation
+        Dim _TempDist As Double
+        Dim _ShortDist As Double = 10000000
+        Dim _CloestSt As clsStation = Nothing
+        Dim _CurrentLoc As New System.Device.Location.GeoCoordinate(tCurrentGeoLoc.Coordinate.Latitude, tCurrentGeoLoc.Coordinate.Longitude)
+        Dim _StLoc As System.Device.Location.GeoCoordinate
+
+        For i As Integer = 0 To StList.Count - 1
+            _StLoc = New System.Device.Location.GeoCoordinate(StList.Item(i).mLat, StList.Item(i).mLng)
+            _TempDist = _CurrentLoc.GetDistanceTo(_StLoc)
+            If _TempDist < _ShortDist Then
+                _ShortDist = _TempDist
+                _CloestSt = StList.Item(i)
+            End If
+        Next
+        Return _CloestSt
     End Function
     Public Event PropertyChanged(sender As Object, e As PropertyChangedEventArgs) Implements INotifyPropertyChanged.PropertyChanged
 End Class
