@@ -237,7 +237,6 @@ C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Bin\Release\uz-Latn-UZ\Micros
 C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Bin\Release\vi-VN\Microsoft.Phone.Controls.Toolkit.resources.dll
 C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Bin\Release\zh-CN\Microsoft.Phone.Controls.Toolkit.resources.dll
 C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Bin\Release\zh-TW\Microsoft.Phone.Controls.Toolkit.resources.dll
-C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\obj\Release\TRA_03.vbprojResolveAssemblyReference.cache
 C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\obj\Release\App.g.i.vb
 C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\obj\Release\dfStationGrp.g.i.vb
 C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\obj\Release\MainPage.g.i.vb
