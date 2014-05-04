@@ -10,7 +10,26 @@ Imports System.ComponentModel
 
 Public Class clsDatabaseIO
 
+    Public Shared Function GetTheLatestDayInAssets(ByRef tLatestDay As DateTime) As Boolean
+        Try
+            Dim _AllXmlFileinDefaultFolder As String() = Directory.GetFiles(GlobalVariables.gDefaultXmlFileFolder) 
 
+            tLatestDay = GetDateFromFilePath(_AllXmlFileinDefaultFolder(0))
+            Dim _TempDay As DateTime = Nothing
+            Dim _ZeroTime As TimeSpan = New TimeSpan(0)
+            For i As Integer = 0 To _AllXmlFileinDefaultFolder.Count - 1
+                _TempDay = GetDateFromFilePath(_AllXmlFileinDefaultFolder(i))
+                If _TempDay - tLatestDay > _ZeroTime Then
+                    tLatestDay = _TempDay
+                End If
+            Next
+            Return True 
+        Catch ex As Exception
+
+        End Try
+
+        Return False
+    End Function
 
     Public Shared Function GetTheLatestDayInXmlFileFolder(ByRef tLatestDay As DateTime) As Boolean
         Try

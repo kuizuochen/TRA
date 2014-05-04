@@ -47,12 +47,23 @@ Partial Public Class pgLoading
 
         ''根據xml folder中是否有xml file 決定 是否是第一次使用 
         ''若為第一次使用 => 複製default xml file 到 指定資料夾  
-        Dim _LatestDayInXmlFolder As DateTime = DateTime.Now
+        Dim _LatestDayInXmlFolder As DateTime = DateTime.Now 
+        Dim _LastestDayInAssets As DateTime = DateTime.Now
+        Dim _OneDay As TimeSpan = New TimeSpan(24, 0, 0)
 
         If clsDatabaseIO.GetTheLatestDayInXmlFileFolder(_LatestDayInXmlFolder) = False Then
             clsDatabaseIO.CopyDefaultTimeTableToXMLFolder()
             clsDatabaseIO.GetTheLatestDayInXmlFileFolder(_LatestDayInXmlFolder)
+        Else
+            ''若Assets中的xml比isostorage 中來的新  => 取代isostorage中的資料
+            If clsDatabaseIO.GetTheLatestDayInAssets(_LastestDayInAssets) = True Then
+                If _LastestDayInAssets - _LatestDayInXmlFolder > _OneDay Then
+                    clsDatabaseIO.CopyDefaultTimeTableToXMLFolder()
+                    clsDatabaseIO.GetTheLatestDayInXmlFileFolder(_LatestDayInXmlFolder)
+                End If
+            End If
         End If
+
 
         ''檢查有無網路可以使用 
         ''若無 => 直接進入程序
