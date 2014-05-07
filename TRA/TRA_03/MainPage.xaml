@@ -279,19 +279,19 @@
         </Style>
         <DataTemplate x:Key="dtShortTicket" >
             <UserControl>
-            <Border Height="75" Padding="0,0,0,3" BorderBrush="#323232" BorderThickness="0,0,0,2">
-                <VisualStateManager.VisualStateGroups  >
-                    <VisualStateGroup x:Name="CommonStates">
-                        <VisualState x:Name="Normal" />
-                        <VisualState x:Name="Selected">
-                            <Storyboard>
-                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="btShortTicketShowDetail">
-                                    <DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
-                                </ObjectAnimationUsingKeyFrames> 
-                            </Storyboard>
-                        </VisualState>
-                    </VisualStateGroup>
-                </VisualStateManager.VisualStateGroups> 
+                <Border Height="75" Padding="0,0,0,3" BorderBrush="#323232" BorderThickness="0,0,0,2">
+                    <VisualStateManager.VisualStateGroups  >
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal" />
+                            <VisualState x:Name="Selected">
+                                <Storyboard>
+                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="btShortTicketShowDetail">
+                                        <DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+                                    </ObjectAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
                     <Grid>
                         <Grid.ColumnDefinitions >
                             <ColumnDefinition Width="50"></ColumnDefinition>
@@ -341,10 +341,10 @@
                             <Rectangle Fill="{Binding pTrainColor2}" HorizontalAlignment="Stretch" Height="3" Margin="1,16,0,0" VerticalAlignment="Top"></Rectangle>
                             <Rectangle Fill="{Binding pTrainColor2}" HorizontalAlignment="Stretch" Height="6" Margin="1,27,0,0" VerticalAlignment="Top"></Rectangle>-->
                         </Grid>
-                    <Button x:Name="btShortTicketShowDetail"  FontFamily="Microsoft Mhei"  FontWeight="ExtraBold" Grid.ColumnSpan="5" Grid.RowSpan="5" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,-10"   Height="70" Width="130"  Background="DarkGray" Foreground="#323232" Opacity="0.8" Visibility="Collapsed"
-                                Click="miShowTrain_Click">顯示</Button> 
-                </Grid> 
-            </Border>
+                        <Button x:Name="btShortTicketShowDetail"  FontFamily="Microsoft Mhei"  FontWeight="ExtraBold" Grid.ColumnSpan="5" Grid.RowSpan="5" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,-10"   Height="70" Width="130"  Background="DarkGray" Foreground="#323232" Opacity="0.8" Visibility="Collapsed"
+                                Click="miShowTrain_Click">顯示</Button>
+                    </Grid>
+                </Border>
             </UserControl>
         </DataTemplate>
         <DataTemplate x:Key="dtLongTicket" >
@@ -728,8 +728,8 @@
                 <Border BorderBrush="#323232" BorderThickness="0,3,0,0">
                     <Grid>
                         <Grid.RowDefinitions >
-                            <RowDefinition Height="70"></RowDefinition> 
-                            <RowDefinition Height="54"></RowDefinition> 
+                            <RowDefinition Height="70"></RowDefinition>
+                            <RowDefinition Height="54"></RowDefinition>
                             <RowDefinition Height="55"></RowDefinition>
                             <RowDefinition Height="2"></RowDefinition>
                             <RowDefinition Height="*" />
@@ -762,7 +762,7 @@
                             <Button x:Name="btnGetCloestSt" Grid.Column="1" Height="75"  Margin="-10" Padding="0" Click="btnGetCloestSt_Click">
                                 <StackPanel  Orientation="Vertical">
                                     <StackPanel  Orientation="Horizontal" Margin="0,-5,0,0"  >
-                                       <Image x:Name="imgGeoLoc" Height="80" Source="Assets/Icons/geoloc.png" Margin="-15"/>  
+                                        <Image x:Name="imgGeoLoc" Height="80" Source="Assets/Icons/geoloc.png" Margin="-15"/>
                                         <TextBlock Text="最近車站" Foreground="#323232" HorizontalAlignment="Right"  VerticalAlignment="Center" FontFamily="Microsoft Mhei" FontWeight="Bold" Margin="2,0,0,0"  ></TextBlock>
                                     </StackPanel>
                                     <ProgressBar x:Name="pbGetGeoLoc" Grid.Column="0" Grid.ColumnSpan="2" IsIndeterminate="False" Foreground="#FF00A2FF"  VerticalAlignment="Top" Margin="0,0,0,0"  ></ProgressBar>
@@ -987,103 +987,148 @@
 
             <phone:PivotItem Header="設定" x:Name="pvSetting"  DataContext="{Binding pSettingVM}" Margin="0">
 
-                <Grid Background="#2D2D30" Margin="20">
+                <ScrollViewer Margin="20">
+                    <Grid Background="#2D2D30" Margin="0" Height="874">
 
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="2*"></RowDefinition>
-                        <RowDefinition Height="2*"></RowDefinition>
-                        <RowDefinition Height="3*"></RowDefinition>
-                        <RowDefinition Height="3*"></RowDefinition>
-                        <RowDefinition Height="3*"></RowDefinition>
-                    </Grid.RowDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"></RowDefinition>
+                            <RowDefinition Height="2*"></RowDefinition>
+                            <RowDefinition Height="3*"></RowDefinition>
+                            <RowDefinition Height="3*"></RowDefinition>
+                            <RowDefinition Height="3*"></RowDefinition>
+                            <RowDefinition Height="3*"></RowDefinition>
+                            <RowDefinition Height="3*"></RowDefinition>
+                        </Grid.RowDefinitions>
 
-                    <toolkit:ToggleSwitch x:Name="tsAutoUpdate" IsChecked="{Binding pIsAutoUpdate, Mode=TwoWay}" Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="3" SwitchForeground="#0097FB" >
-                        <toolkit:ToggleSwitch.Header>
-                            <TextBlock Text="啟動後,自動下載火車時刻表" FontSize="22" Foreground="LightGray"></TextBlock>
-                        </toolkit:ToggleSwitch.Header>
-                    </toolkit:ToggleSwitch>
+                        <toolkit:ToggleSwitch x:Name="tsAutoUpdate" IsChecked="{Binding pIsAutoUpdate, Mode=TwoWay}" Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="3" SwitchForeground="#0097FB" >
+                            <toolkit:ToggleSwitch.Header>
+                                <TextBlock Text="啟動後,自動下載火車時刻表" FontSize="22" Foreground="LightGray"></TextBlock>
+                            </toolkit:ToggleSwitch.Header>
+                        </toolkit:ToggleSwitch>
 
-                    <StackPanel Grid.Row="1">
-                        <StackPanel Orientation="Horizontal" Margin="10,0,0,5">
-                            <TextBlock Text="有效時刻表未滿" FontWeight="ExtraBold" VerticalAlignment="Center" Foreground="LightGray" FontSize="22"></TextBlock>
-                            <TextBlock Text="{Binding pDayCntToAutoUpdate, Mode=TwoWay}" FontSize="32" FontWeight="Bold" Foreground="#0097FB"></TextBlock>
-                            <TextBlock Text="日,則啟動自動更新" FontWeight="ExtraBold" VerticalAlignment="Center" Foreground="LightGray" FontSize="22"></TextBlock>
-                        </StackPanel>
-                        <Slider x:Name="sldDays" Value="{Binding pDayCntToAutoUpdate, Mode=TwoWay}" Maximum="15" Minimum="3" Foreground="#0097FB" VerticalAlignment="Center" SmallChange="1"></Slider>
-                    </StackPanel>
-
-                    <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,20,0,20" >
-                        <StackPanel Orientation="Vertical" Margin="10,10,0,0">
-                            <TextBlock Text="時刻表有效期限至:" FontSize="22" Foreground="LightGray" HorizontalAlignment="Left"></TextBlock>
-                            <TextBlock Text="{Binding pLatestTable}" FontSize="32" FontWeight="Bold" Foreground="#0097FB" HorizontalAlignment="Center" Margin="0,10,0,0"></TextBlock>
+                        <StackPanel Grid.Row="1">
+                            <StackPanel Orientation="Horizontal" Margin="10,0,0,5">
+                                <TextBlock Text="有效時刻表未滿" FontWeight="ExtraBold" VerticalAlignment="Center" Foreground="LightGray" FontSize="22"></TextBlock>
+                                <TextBlock Text="{Binding pDayCntToAutoUpdate, Mode=TwoWay}" FontSize="32" FontWeight="Bold" Foreground="#0097FB"></TextBlock>
+                                <TextBlock Text="日,則啟動自動更新" FontWeight="ExtraBold" VerticalAlignment="Center" Foreground="LightGray" FontSize="22"></TextBlock>
+                            </StackPanel>
+                            <Slider x:Name="sldDays" Value="{Binding pDayCntToAutoUpdate, Mode=TwoWay}" Maximum="15" Minimum="3" Foreground="#0097FB" VerticalAlignment="Center" SmallChange="1"></Slider>
                         </StackPanel>
 
-                        <Button x:Name="btnShowUpdatePop"  Margin="30,20,10,0" Width="220" Content="立即手動更新"
+                        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,20,0,20" >
+                            <StackPanel Orientation="Vertical" Margin="10,10,0,0">
+                                <TextBlock Text="時刻表有效期限至:" FontSize="22" Foreground="LightGray" HorizontalAlignment="Left"></TextBlock>
+                                <TextBlock Text="{Binding pLatestTable}" FontSize="32" FontWeight="Bold" Foreground="#0097FB" HorizontalAlignment="Center" Margin="0,10,0,0"></TextBlock>
+                            </StackPanel>
+
+                            <Button x:Name="btnShowUpdatePop"  Margin="30,20,10,0" Width="220" Content="立即手動更新"
                                  Click="btnShowUpdatePop_Click"/>
-                    </StackPanel>
-
-
-                    <toolkit:ToggleSwitch x:Name="tsOffNoNuke" IsChecked="{Binding pShowNoNuke, Mode=TwoWay}"  Grid.Row="3" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="3" SwitchForeground="#0097FB" BorderBrush="DarkGray" BorderThickness="0,3,0,0" Padding="0,15,0,0"
-                                          Click="tsOffNoNuke_Click">
-                        <toolkit:ToggleSwitch.Header>
-                            <TextBlock Text="反核連署頁面" FontSize="22" Foreground="LightGray"></TextBlock>
-                        </toolkit:ToggleSwitch.Header>
-                        
-                    </toolkit:ToggleSwitch>
-                    <TextBlock Grid.Row="3" Text="大型動態磚圖案"  Margin="10,0,0,0" VerticalAlignment="Bottom"  FontSize="22" Foreground="LightGray"></TextBlock>
-                   
-                        <Grid Grid.Row="4"> 
-                        <StackPanel Grid.Column="0" Orientation="Horizontal">
-                            <RadioButton x:Name="rbFirstPic" IsChecked="{Binding pIsFirstTilePicSelected, Mode=TwoWay}" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top" Margin="-20,0,0,0" 
-                                         Checked="rbFirstPic_Checked">
-                                <RadioButton.RenderTransform>
-                                    <CompositeTransform ScaleX="0.5" ScaleY="0.5" />
-                                </RadioButton.RenderTransform>
-                            </RadioButton> 
-                            <Image x:Name="imgFirst" Source="/Assets/NoNuke/NoNukeFlag_691_336.jpg" Width="180" Margin="-20,0,10,0"
-                                   MouseLeftButtonDown="imgFirst_MouseLeftButtonDown"></Image>
-                            <RadioButton x:Name="rbSecondPic" IsChecked="{Binding pIsSecondTilePicSelected, Mode=TwoWay}" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top" Margin="-20,0,0,0" 
-                                         Checked="rbSecondPic_Checked">
-                                <RadioButton.RenderTransform>
-                                    <CompositeTransform ScaleX="0.5" ScaleY="0.5" />
-                                </RadioButton.RenderTransform>
-                            </RadioButton>
-                            <Image x:Name="imgSecond" Source="/Assets/NoNuke/NoNukeYellow_691_336.jpg" Width="180" Margin="-20,0,0,0"
-                                   MouseLeftButtonDown="imgSecond_MouseLeftButtonDown"></Image>
                         </StackPanel>
-                    </Grid>
-                    <Popup x:Name="popReopenOK" Grid.Column="0"   VerticalAlignment="Top" HorizontalAlignment="Left" Margin="-5,150,0,0" IsOpen="False"  >
-                        <Border  BorderThickness="4" Margin="10" BorderBrush="White" Width="428">
-                            <StackPanel Background="#FF49B3DA">
-                                <Image Source="/Images/disclaimer.png" HorizontalAlignment="Center" Stretch="Fill" Margin="0,15,0,5"/>
-                                <TextBlock Text="謝謝您關注核四議題!!" FontFamily="Microsoft Mhei"  FontWeight="ExtraBold" TextAlignment="Center" FontSize="40" Margin="10,0" />
-                                <TextBlock Text="目前火力發電占全台總發電量70%以上!" FontFamily="Microsoft Mhei"  FontWeight="ExtraBold"  HorizontalAlignment="Center" FontSize="21" Margin="0,10" />
-                                <TextBlock Text="改善現有的老舊火力發電機組,其增加的電量將高於核四廠所產生的電量." TextWrapping="Wrap" TextAlignment="Center"  FontFamily="Microsoft Mhei"  FontWeight="ExtraBold"  HorizontalAlignment="Center" FontSize="21" Margin="0,0" />
-                                <StackPanel Orientation="Horizontal" Margin="0,5" Width="420"> 
-                                    <Button x:Name="btnReopenOk" Content="OK"   Width="420"  
-                                            Click="btnReopenOk_Click"/>
-                                </StackPanel>
-                            </StackPanel>
-                        </Border>
-                    </Popup>
-                    <Popup x:Name="popDoUpdate" Grid.Column="0"   VerticalAlignment="Top" HorizontalAlignment="Left" Margin="-5,150,0,0" IsOpen="False"  >
-                        <Border  BorderThickness="4" Margin="10" BorderBrush="White" Width="428">
-                            <StackPanel Background="#FF49B3DA" Margin="3,0,-3,0">
-                                <Image Source="/Images/disclaimer.png" HorizontalAlignment="Center" Stretch="Fill" Margin="0,15,0,5"/>
-                                <TextBlock Text="立即下載最新時刻表?" FontFamily="Microsoft Mhei" Foreground="White" FontWeight="ExtraBold" TextAlignment="Center" FontSize="40" Margin="10,0" />
-                                <ProgressBar x:Name="pbDoingUpdate" Grid.Column="0" Grid.ColumnSpan="2" IsIndeterminate="False"  Foreground="White"  VerticalAlignment="Top" Margin="0,10,0,5"  ></ProgressBar>
-                                <TextBlock x:Name="tbPopUpdateStatus"  TextAlignment="Center"  FontFamily="Microsoft Mhei"  FontWeight="ExtraBold"  HorizontalAlignment="Center" FontSize="21" Margin="0,0" />
-                                <StackPanel Orientation="Horizontal" Margin="0,5" Width="420">
-                                    <Button x:Name="btnUpdateOk" Content="Yes" Width="210" 
-                                            Click="btnUpdateOk_Click"/>
-                                    <Button x:Name="btnUpdateCancel" Content="No" Width="210" 
-                                            Click="btnUpdateCancel_Click"/>
-                                </StackPanel>
-                            </StackPanel>
-                        </Border>
-                    </Popup>
 
-                </Grid>
+
+                        <toolkit:ToggleSwitch x:Name="tsOffNoNuke" IsChecked="{Binding pShowNoNuke, Mode=TwoWay}"  Grid.Row="3" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="3" SwitchForeground="#0097FB" BorderBrush="DarkGray" BorderThickness="0,3,0,0" Padding="0,15,0,0"
+                                          Click="tsOffNoNuke_Click">
+                            <toolkit:ToggleSwitch.Header>
+                                <TextBlock Text="反核連署頁面" FontSize="22" Foreground="LightGray"></TextBlock>
+                            </toolkit:ToggleSwitch.Header>
+
+                        </toolkit:ToggleSwitch>
+                        <TextBlock Grid.Row="3" Text="動態磚圖案"  Margin="10,0,0,0" VerticalAlignment="Bottom"  FontSize="22" Foreground="LightGray"></TextBlock>
+
+                        <Grid Grid.Row="4">
+                            <StackPanel Grid.Column="0" Orientation="Horizontal">
+                                <RadioButton x:Name="rbFirstPic_1" IsChecked="{Binding pIsFirstTilePicSelected_1, Mode=TwoWay}" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top" Margin="-20,0,0,0" 
+                                         Checked="rbPic_Checked">
+                                    <RadioButton.RenderTransform>
+                                        <CompositeTransform ScaleX="0.5" ScaleY="0.5" />
+                                    </RadioButton.RenderTransform>
+                                </RadioButton>
+                                <Image x:Name="imgFirst_1" Source="/Assets/Tiles/icon_159_2.png" Width="180" Margin="-20,30,10,0"
+                                   MouseLeftButtonDown="imgFirst_1_MouseLeftButtonDown"></Image>
+                                <RadioButton x:Name="rbSecondPic_1" IsChecked="{Binding pIsSecondTilePicSelected_1, Mode=TwoWay}" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top" Margin="-20,0,0,0" 
+                                         Checked="rbPic_Checked">
+                                    <RadioButton.RenderTransform>
+                                        <CompositeTransform ScaleX="0.5" ScaleY="0.5" />
+                                    </RadioButton.RenderTransform>
+                                </RadioButton>
+                                <Image x:Name="imgSecond_1" Source="/Assets/Tiles/icon_159.png" Width="180" HorizontalAlignment="Center" Margin="-10,10"
+                                   MouseLeftButtonDown="imgSecond_1_MouseLeftButtonDown"></Image>
+                            </StackPanel>
+                        </Grid>
+                        <Grid Grid.Row="5">
+                            <StackPanel Grid.Column="0" Orientation="Horizontal">
+                                <RadioButton x:Name="rbFirstPic_2" IsChecked="{Binding pIsFirstTilePicSelected_2, Mode=TwoWay}" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top" Margin="-20,0,0,0" 
+                                         Checked="rbPic_Checked">
+                                    <RadioButton.RenderTransform>
+                                        <CompositeTransform ScaleX="0.5" ScaleY="0.5" />
+                                    </RadioButton.RenderTransform>
+                                </RadioButton>
+                                <Image x:Name="imgFirst_2" Source="/Assets/Tiles/icon336_2.png" Width="180" Margin="-20,20,10,0"
+                                   MouseLeftButtonDown="imgFirst_2_MouseLeftButtonDown"></Image>
+                                <RadioButton x:Name="rbSecondPic_2" IsChecked="{Binding pIsSecondTilePicSelected_2, Mode=TwoWay}" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top" Margin="-20,0,0,0" 
+                                         Checked="rbPic_Checked">
+                                    <RadioButton.RenderTransform>
+                                        <CompositeTransform ScaleX="0.5" ScaleY="0.5" />
+                                    </RadioButton.RenderTransform>
+                                </RadioButton>
+                                <Image x:Name="imgSecond_2" Source="/Assets/Tiles/icon336.png" Width="180" Margin="-20,15,0,0"
+                                   MouseLeftButtonDown="imgSecond_2_MouseLeftButtonDown"></Image>
+                            </StackPanel>
+                        </Grid>
+                        <Grid Grid.Row="6">
+                            <StackPanel Grid.Column="0" Orientation="Horizontal">
+                                <RadioButton x:Name="rbFirstPic" IsChecked="{Binding pIsFirstTilePicSelected, Mode=TwoWay}" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top" Margin="-20,0,0,0" 
+                                         Checked="rbPic_Checked">
+                                    <RadioButton.RenderTransform>
+                                        <CompositeTransform ScaleX="0.5" ScaleY="0.5" />
+                                    </RadioButton.RenderTransform>
+                                </RadioButton>
+                                <Image x:Name="imgFirst" Source="/Assets/NoNuke/NoNukeFlag_691_336.jpg" Width="180" Margin="-20,0,10,0"
+                                   MouseLeftButtonDown="imgFirst_MouseLeftButtonDown"></Image>
+                                <RadioButton x:Name="rbSecondPic" IsChecked="{Binding pIsSecondTilePicSelected, Mode=TwoWay}" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top" Margin="-20,0,0,0" 
+                                         Checked="rbPic_Checked">
+                                    <RadioButton.RenderTransform>
+                                        <CompositeTransform ScaleX="0.5" ScaleY="0.5" />
+                                    </RadioButton.RenderTransform>
+                                </RadioButton>
+                                <Image x:Name="imgSecond" Source="/Assets/NoNuke/NoNukeYellow_691_336.jpg" Width="180" Margin="-20,0,0,0"
+                                   MouseLeftButtonDown="imgSecond_MouseLeftButtonDown"></Image>
+                            </StackPanel>
+                        </Grid>
+                        <Popup x:Name="popReopenOK" Grid.Column="0"   VerticalAlignment="Top" HorizontalAlignment="Left" Margin="-5,150,0,0" IsOpen="False"  >
+                            <Border  BorderThickness="4" Margin="10" BorderBrush="White" Width="428">
+                                <StackPanel Background="#FF49B3DA">
+                                    <Image Source="/Images/disclaimer.png" HorizontalAlignment="Center" Stretch="Fill" Margin="0,15,0,5"/>
+                                    <TextBlock Text="謝謝您關注核四議題!!" FontFamily="Microsoft Mhei"  FontWeight="ExtraBold" TextAlignment="Center" FontSize="40" Margin="10,0" />
+                                    <TextBlock Text="目前火力發電占全台總發電量70%以上!" FontFamily="Microsoft Mhei"  FontWeight="ExtraBold"  HorizontalAlignment="Center" FontSize="21" Margin="0,10" />
+                                    <TextBlock Text="改善現有的老舊火力發電機組,其增加的電量將高於核四廠所產生的電量." TextWrapping="Wrap" TextAlignment="Center"  FontFamily="Microsoft Mhei"  FontWeight="ExtraBold"  HorizontalAlignment="Center" FontSize="21" Margin="0,0" />
+                                    <StackPanel Orientation="Horizontal" Margin="0,5" Width="420">
+                                        <Button x:Name="btnReopenOk" Content="OK"   Width="420"  
+                                            Click="btnReopenOk_Click"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </Popup>
+                        <Popup x:Name="popDoUpdate" Grid.Column="0"   VerticalAlignment="Top" HorizontalAlignment="Left" Margin="-5,150,0,0" IsOpen="False"  >
+                            <Border  BorderThickness="4" Margin="10" BorderBrush="White" Width="428">
+                                <StackPanel Background="#FF49B3DA" Margin="3,0,-3,0">
+                                    <Image Source="/Images/disclaimer.png" HorizontalAlignment="Center" Stretch="Fill" Margin="0,15,0,5"/>
+                                    <TextBlock Text="立即下載最新時刻表?" FontFamily="Microsoft Mhei" Foreground="White" FontWeight="ExtraBold" TextAlignment="Center" FontSize="40" Margin="10,0" />
+                                    <ProgressBar x:Name="pbDoingUpdate" Grid.Column="0" Grid.ColumnSpan="2" IsIndeterminate="False"  Foreground="White"  VerticalAlignment="Top" Margin="0,10,0,5"  ></ProgressBar>
+                                    <TextBlock x:Name="tbPopUpdateStatus"  TextAlignment="Center"  FontFamily="Microsoft Mhei"  FontWeight="ExtraBold"  HorizontalAlignment="Center" FontSize="21" Margin="0,0" />
+                                    <StackPanel Orientation="Horizontal" Margin="0,5" Width="420">
+                                        <Button x:Name="btnUpdateOk" Content="Yes" Width="210" 
+                                            Click="btnUpdateOk_Click"/>
+                                        <Button x:Name="btnUpdateCancel" Content="No" Width="210" 
+                                            Click="btnUpdateCancel_Click"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </Popup>
+
+                    </Grid>
+                </ScrollViewer>
+
             </phone:PivotItem>
 
             <!--<phone:PivotItem  >

@@ -775,23 +775,27 @@ Partial Public Class MainPage
         End Try
 
     End Sub
-    Private Sub rbFirstPic_Checked(sender As Object, e As RoutedEventArgs)
+
+    Private Sub rbPic_Checked(sender As Object, e As RoutedEventArgs)
         Dim NewTile As New FlipTileData
         With NewTile
-            .SmallBackgroundImage = New Uri("/Assets/Tiles/icon_159.png", UriKind.Relative)
-            .BackBackgroundImage = New Uri("/Assets/Tiles/icon336.png", UriKind.Relative)
-            .WideBackgroundImage = New Uri("/Assets/Tiles/NoNukeFlag_691_336.jpg", UriKind.Relative)
-        End With
+            If CType(DataContext, vmMain).pSettingVM.pIsFirstTilePicSelected_1 = True Then
+                .SmallBackgroundImage = New Uri("/Assets/Tiles/icon_159_2.png", UriKind.Relative)
+            Else
+                .SmallBackgroundImage = New Uri("/Assets/Tiles/icon_159.png", UriKind.Relative)
+            End If
 
-        ShellTile.ActiveTiles.FirstOrDefault.Update(NewTile)
-    End Sub
+            If CType(DataContext, vmMain).pSettingVM.pIsFirstTilePicSelected_1 = True Then
+                .BackBackgroundImage = New Uri("/Assets/Tiles/icon336_2.png", UriKind.Relative)
+            Else
+                .BackBackgroundImage = New Uri("/Assets/Tiles/icon336.png", UriKind.Relative)
+            End If
 
-    Private Sub rbSecondPic_Checked(sender As Object, e As RoutedEventArgs)
-        Dim NewTile As New FlipTileData
-        With NewTile
-            .SmallBackgroundImage = New Uri("/Assets/Tiles/icon_159.png", UriKind.Relative)
-            .BackBackgroundImage = New Uri("/Assets/Tiles/icon336.png", UriKind.Relative)
-            .WideBackgroundImage = New Uri("/Assets/NoNuke/NoNukeYellow_691_336.jpg", UriKind.Relative)
+            If CType(DataContext, vmMain).pSettingVM.pIsFirstTilePicSelected_1 = True Then
+                .WideBackgroundImage = New Uri("/Assets/Tiles/NoNukeFlag_691_336.jpg", UriKind.Relative)
+            Else
+                .WideBackgroundImage = New Uri("/Assets/NoNuke/NoNukeYellow_691_336.jpg", UriKind.Relative)
+            End If
         End With
 
         ShellTile.ActiveTiles.FirstOrDefault.Update(NewTile)
@@ -804,7 +808,21 @@ Partial Public Class MainPage
     Private Sub imgSecond_MouseLeftButtonDown(sender As Object, e As MouseButtonEventArgs)
         rbSecondPic.IsChecked = True
     End Sub
+    Private Sub imgFirst_1_MouseLeftButtonDown(sender As Object, e As MouseButtonEventArgs)
+        rbFirstPic_1.IsChecked = True
+    End Sub
 
+    Private Sub imgSecond_1_MouseLeftButtonDown(sender As Object, e As MouseButtonEventArgs)
+        rbSecondPic_1.IsChecked = True
+    End Sub
+
+    Private Sub imgFirst_2_MouseLeftButtonDown(sender As Object, e As MouseButtonEventArgs)
+        rbFirstPic_2.IsChecked = True
+    End Sub
+
+    Private Sub imgSecond_2_MouseLeftButtonDown(sender As Object, e As MouseButtonEventArgs)
+        rbSecondPic_2.IsChecked = True
+    End Sub
 #Region "Update"
     Private Sub UpdateProcedure()
 
@@ -888,6 +906,7 @@ Partial Public Class MainPage
     End Sub
 #End Region
 #End Region
+
 
 
 End Class

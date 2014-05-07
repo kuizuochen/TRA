@@ -8,6 +8,12 @@ Public Class vmSetting
     Public Property pIsFirstTilePicSelected As Boolean = True
     Public Property pIsSecondTilePicSelected As Boolean = False
 
+    Public Property pIsFirstTilePicSelected_1 As Boolean = True
+    Public Property pIsSecondTilePicSelected_1 As Boolean = False
+
+    Public Property pIsFirstTilePicSelected_2 As Boolean = True
+    Public Property pIsSecondTilePicSelected_2 As Boolean = False
+
     Public mDateOfLatestTable As DateTime = DateTime.Now
     Public Property pDateOfLatestTable As DateTime
         Get
@@ -75,6 +81,30 @@ Public Class vmSetting
             _Result += "_0"
         End If
 
+        If pIsFirstTilePicSelected_1 = True Then
+            _Result += "_1"
+        Else
+            _Result += "_0"
+        End If
+
+        If pIsSecondTilePicSelected_1 = True Then
+            _Result += "_1"
+        Else
+            _Result += "_0"
+        End If
+
+        If pIsFirstTilePicSelected_2 = True Then
+            _Result += "_1"
+        Else
+            _Result += "_0"
+        End If
+
+        If pIsSecondTilePicSelected_2 = True Then
+            _Result += "_1"
+        Else
+            _Result += "_0"
+        End If
+
         Return _Result
     End Function
     Public Sub LoadFromIsoSetting(ByRef tIsoSetting As System.IO.IsolatedStorage.IsolatedStorageSettings)
@@ -101,6 +131,20 @@ Public Class vmSetting
 
         If _IsoSettingStrings(4) = "0" Then pIsSecondTilePicSelected = False
         If _IsoSettingStrings(4) = "1" Then pIsSecondTilePicSelected = True
+
+        Try
+            If _IsoSettingStrings(5) = "0" Then pIsFirstTilePicSelected_1 = False
+            If _IsoSettingStrings(5) = "1" Then pIsFirstTilePicSelected_1 = True
+            If _IsoSettingStrings(6) = "0" Then pIsSecondTilePicSelected_1 = False
+            If _IsoSettingStrings(6) = "1" Then pIsSecondTilePicSelected_1 = True
+
+            If _IsoSettingStrings(7) = "0" Then pIsFirstTilePicSelected_2 = False
+            If _IsoSettingStrings(7) = "1" Then pIsFirstTilePicSelected_2 = True
+            If _IsoSettingStrings(8) = "0" Then pIsSecondTilePicSelected_2 = False
+            If _IsoSettingStrings(8) = "1" Then pIsSecondTilePicSelected_2 = True
+        Catch ex As Exception
+
+        End Try
 
     End Sub
 

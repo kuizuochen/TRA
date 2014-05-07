@@ -1,6 +1,6 @@
-﻿<xapCache source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Bin\Release\TRA_03_Release_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="2014/5/4 下午 11:49:54">
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\obj\Release\TRA_03.dll" archivePath="TRA_03.dll" lastWriteTime="2014/5/4 下午 11:49:41" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\obj\Release\zh-Hant\TRA_03.resources.dll" archivePath="zh-Hant\TRA_03.resources.dll" lastWriteTime="2014/5/4 下午 11:49:41" />
+﻿<xapCache source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Bin\Release\TRA_03_Release_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="2014/5/7 下午 11:52:25">
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\obj\Release\TRA_03.dll" archivePath="TRA_03.dll" lastWriteTime="2014/5/7 下午 11:52:13" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\obj\Release\zh-Hant\TRA_03.resources.dll" archivePath="zh-Hant\TRA_03.resources.dll" lastWriteTime="2014/5/7 下午 11:52:14" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\AlignmentGrid.png" archivePath="Assets\AlignmentGrid.png" lastWriteTime="2014/2/25 下午 07:22:35" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\ApplicationIcon.png" archivePath="Assets\ApplicationIcon.png" lastWriteTime="2014/2/25 下午 07:22:35" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DebugTimeTable\20131005.xml" archivePath="Assets\DebugTimeTable\20131005.xml" lastWriteTime="2014/3/2 上午 08:40:13" />
@@ -77,8 +77,10 @@
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\Tiles\FlipCycleTileLarge.png" archivePath="Assets\Tiles\FlipCycleTileLarge.png" lastWriteTime="2014/2/25 下午 07:22:35" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\Tiles\FlipCycleTileMedium.png" archivePath="Assets\Tiles\FlipCycleTileMedium.png" lastWriteTime="2014/2/25 下午 07:22:35" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\Tiles\FlipCycleTileSmall.png" archivePath="Assets\Tiles\FlipCycleTileSmall.png" lastWriteTime="2014/2/25 下午 07:22:35" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\Tiles\icon336.png" archivePath="Assets\Tiles\icon336.png" lastWriteTime="2014/4/19 下午 03:38:29" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\Tiles\IconicTileMediumLarge.png" archivePath="Assets\Tiles\IconicTileMediumLarge.png" lastWriteTime="2014/2/25 下午 07:22:35" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\Tiles\IconicTileSmall.png" archivePath="Assets\Tiles\IconicTileSmall.png" lastWriteTime="2014/2/25 下午 07:22:35" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\Tiles\icon_159.png" archivePath="Assets\Tiles\icon_159.png" lastWriteTime="2014/4/19 下午 03:21:23" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\Tiles\NoNukeFlag_691_336.jpg" archivePath="Assets\Tiles\NoNukeFlag_691_336.jpg" lastWriteTime="2014/4/19 下午 03:56:42" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\ReadMe.Coding4Fun.Toolkit.txt" archivePath="ReadMe.Coding4Fun.Toolkit.txt" lastWriteTime="2014/4/11 上午 12:09:03" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\README_FIRST.txt" archivePath="README_FIRST.txt" lastWriteTime="2014/2/25 下午 07:51:17" />
@@ -94,7 +96,7 @@
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\packages\Coding4Fun.Toolkit.Storage.2.0.7\lib\windowsphone8\Coding4Fun.Toolkit.Storage.dll" archivePath="Coding4Fun.Toolkit.Storage.dll" lastWriteTime="2014/4/11 上午 12:09:01" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll" archivePath="Microsoft.Phone.Controls.Toolkit.dll" lastWriteTime="2014/2/25 下午 07:51:16" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\packages\SharpZipLib-WP7.0.86.0.518\lib\sl4-windowsphone71\SharpZipLib.WindowsPhone7.dll" archivePath="SharpZipLib.WindowsPhone7.dll" lastWriteTime="2014/2/26 下午 10:37:35" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\Tiles\icon336.png" archivePath="Assets\Tiles\icon336.png" lastWriteTime="2014/4/19 下午 03:38:29" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\Tiles\icon_159.png" archivePath="Assets\Tiles\icon_159.png" lastWriteTime="2014/4/19 下午 03:21:23" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Bin\Release\My Project\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="2014/5/4 下午 11:49:10" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\Tiles\icon336_2.png" archivePath="Assets\Tiles\icon336_2.png" lastWriteTime="2014/5/7 下午 11:13:14" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\Tiles\icon_159_2.png" archivePath="Assets\Tiles\icon_159_2.png" lastWriteTime="2014/5/7 下午 10:58:24" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Bin\Release\My Project\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="2014/5/7 下午 11:14:31" />
 </xapCache>
