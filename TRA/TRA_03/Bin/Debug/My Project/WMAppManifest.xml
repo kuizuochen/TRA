@@ -4,8 +4,8 @@
   <Languages xmlns="">
     <Language code="zh-Hant" />
   </Languages>
-  <App xmlns="" ProductID="{4020674f-17ba-4f89-9563-0a9ce99131cb}" Title="台鐵時刻表" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="TRA_03 author" Description="1.離線查詢&#xD;&#xA;2.線上更新時刻表&#xD;&#xA;3.站到站查詢&#xD;&#xA;4.各車站時刻表&#xD;&#xA;5.列車誤點查詢&#xD;&#xA;6.各列車詳細資訊&#xD;&#xA;7.票價" Publisher="TRA_03" PublisherID="{c09da76c-f68f-447d-a088-6d8be65eaff5}">
-    <IconPath IsRelative="true" IsResource="false">Assets\Tiles\icon_159.png</IconPath>
+  <App xmlns="" ProductID="{4020674f-17ba-4f89-9563-0a9ce99131cb}" Title="台鐵時刻表" RuntimeType="Silverlight" Version="2.1.0.0" Genre="apps.normal" Author="TRA_03 author" Description="1.離線查詢&#xD;&#xA;2.線上更新時刻表&#xD;&#xA;3.站到站查詢&#xD;&#xA;4.各車站時刻表&#xD;&#xA;5.列車誤點查詢&#xD;&#xA;6.各列車詳細資訊&#xD;&#xA;7.票價" Publisher="TRA_03" PublisherID="{c09da76c-f68f-447d-a088-6d8be65eaff5}">
+    <IconPath IsRelative="true" IsResource="false">Assets\Tiles\icon_159_2.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
       <Capability Name="ID_CAP_MEDIALIB_AUDIO" />
@@ -21,9 +21,9 @@
     <Tokens>
       <PrimaryToken TokenID="TRA_03Token" TaskName="_default">
         <TemplateFlip>
-          <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\icon_159.png</SmallImageURI>
+          <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\icon_159_2.png</SmallImageURI>
           <Count>0</Count>
-          <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\icon336.png</BackgroundImageURI>
+          <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\icon336_2.png</BackgroundImageURI>
           <Title></Title>
           <BackContent></BackContent>
           <BackBackgroundImageURI></BackBackgroundImageURI>

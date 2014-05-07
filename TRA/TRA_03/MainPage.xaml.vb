@@ -777,21 +777,23 @@ Partial Public Class MainPage
     End Sub
 
     Private Sub rbPic_Checked(sender As Object, e As RoutedEventArgs)
+        If mInitializeState = True Then Exit Sub
+
         Dim NewTile As New FlipTileData
         With NewTile
-            If CType(DataContext, vmMain).pSettingVM.pIsFirstTilePicSelected_1 = True Then
+            If rbFirstPic_2.IsChecked = True Then
                 .SmallBackgroundImage = New Uri("/Assets/Tiles/icon_159_2.png", UriKind.Relative)
             Else
                 .SmallBackgroundImage = New Uri("/Assets/Tiles/icon_159.png", UriKind.Relative)
             End If
 
-            If CType(DataContext, vmMain).pSettingVM.pIsFirstTilePicSelected_1 = True Then
-                .BackBackgroundImage = New Uri("/Assets/Tiles/icon336_2.png", UriKind.Relative)
+            If rbFirstPic_1.IsChecked = True Then
+                .BackgroundImage = New Uri("/Assets/Tiles/icon336_2.png", UriKind.Relative)
             Else
-                .BackBackgroundImage = New Uri("/Assets/Tiles/icon336.png", UriKind.Relative)
+                .BackgroundImage = New Uri("/Assets/Tiles/icon336.png", UriKind.Relative)
             End If
 
-            If CType(DataContext, vmMain).pSettingVM.pIsFirstTilePicSelected_1 = True Then
+            If rbFirstPic.IsChecked = True Then
                 .WideBackgroundImage = New Uri("/Assets/Tiles/NoNukeFlag_691_336.jpg", UriKind.Relative)
             Else
                 .WideBackgroundImage = New Uri("/Assets/NoNuke/NoNukeYellow_691_336.jpg", UriKind.Relative)
@@ -800,6 +802,7 @@ Partial Public Class MainPage
 
         ShellTile.ActiveTiles.FirstOrDefault.Update(NewTile)
     End Sub
+    
 
     Private Sub imgFirst_MouseLeftButtonDown(sender As Object, e As MouseButtonEventArgs)
         rbFirstPic.IsChecked = True
