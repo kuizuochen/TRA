@@ -140,6 +140,12 @@
     <Compile Include="pgLoading.xaml.vb">
       <DependentUpon>pgLoading.xaml</DependentUpon>
     </Compile>
+    <Compile Include="pgStSelection.xaml.vb">
+      <DependentUpon>pgStSelection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pgStSelectionSingle.xaml.vb">
+      <DependentUpon>pgStSelectionSingle.xaml</DependentUpon>
+    </Compile>
     <Compile Include="pgTrainDetail.xaml.vb">
       <DependentUpon>pgTrainDetail.xaml</DependentUpon>
     </Compile>
@@ -183,6 +189,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="pgStSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pgStSelectionSingle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="pgTrainDetail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -207,50 +221,50 @@
     </Content>
     <Content Include="Assets\DebugTimeTable\20131005.xml" />
     <Content Include="Assets\DebugTimeTable\20140303.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140422.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140423.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140424.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140425.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140426.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140427.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140428.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140429.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140430.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140501.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140502.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140503.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140504.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140505.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140506.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140507.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140508.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140509.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140510.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140511.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140512.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140513.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140514.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140515.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140516.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140517.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140518.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140519.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140520.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140521.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140522.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140523.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140524.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140525.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140526.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140527.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140528.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140529.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140530.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140531.xml" />
     <Content Include="Assets\DefaultTimeTable\20140601.xml" />
     <Content Include="Assets\DefaultTimeTable\20140602.xml" />
     <Content Include="Assets\DefaultTimeTable\20140603.xml" />
     <Content Include="Assets\DefaultTimeTable\20140604.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140605.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140606.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140607.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140608.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140609.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140610.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140611.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140612.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140613.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140614.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140615.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140616.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140617.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140618.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140619.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140620.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140621.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140622.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140623.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140624.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140625.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140626.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140627.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140628.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140629.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140630.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140701.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140702.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140703.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140704.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140705.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140706.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140707.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140708.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140709.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140710.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140711.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140712.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140713.xml" />
+    <Content Include="Assets\DefaultTimeTable\20140714.xml" />
     <Content Include="Assets\Icons\Bike.png" />
     <Content Include="Assets\Icons\black_arrow.png" />
     <Content Include="Assets\Icons\checkmark_pencil.png" />
@@ -324,6 +338,7 @@
     <Reference Include="Coding4Fun.Toolkit.Storage">
       <HintPath>..\packages\Coding4Fun.Toolkit.Storage.2.0.7\lib\windowsphone8\Coding4Fun.Toolkit.Storage.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Phone.Controls.Toolkit">
       <HintPath>..\packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
     </Reference>

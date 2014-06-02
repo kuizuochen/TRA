@@ -146,6 +146,8 @@ Public Class clsStGrp
     Public mStation As ObservableCollection(Of clsStation)
     Public mFirstSelectedStName As String
 
+    Public mStNameList As List(Of String)
+
     Public Function Clone() As clsStGrp
         Return New clsStGrp(Me.mID, Me.mChName, Me.mEnName, Me.mHLColor, Me.mStation, Me.mFirstSelectedStName)
     End Function
@@ -164,9 +166,11 @@ Public Class clsStGrp
         mID = ID
         mChName = ChName
         mEnName = EnName
+        mStNameList = New List(Of String)
         mStation = New ObservableCollection(Of clsStation)
         For i As Integer = 0 To StList.Count - 1
             mStation.Add(StList.Item(i))
+            mStNameList.Add(StList.Item(i).mChName)
         Next
         mHLColor = HLColor
         mFirstSelectedStName = tFirstSelectedStName
@@ -176,21 +180,17 @@ Public Class clsStGrp
         mID = ID
         mChName = ChName
         mEnName = EnName
+        mStNameList = New List(Of String)
         mStation = New ObservableCollection(Of clsStation)
         For i As Integer = 0 To StList.Count - 1
             mStation.Add(clsStation.GetStationByChName(StList.Item(i)))
+            mStNameList.Add(StList.Item(i))
         Next
         mHLColor = HLColor
         mFirstSelectedStName = tFirstSelectedStName
     End Sub
 
-    'Public Sub New(id As Integer, chname As String, enname As String, hlcolor As String)
-    '    mid = id
-    '    mchname = chname
-    '    menname = enname
-    '    mstation = New observablecollection(Of clsstation)
-    '    mhlcolor = hlcolor
-    'End Sub
+ 
 
     Public Shared Function GetRegion(AllStationGrp As List(Of clsStGrp), theStation As clsStation, ByRef tGrpIndex As Integer, ByRef tStIndex As Integer) As clsStGrp
         For i As Integer = 0 To AllStationGrp.Count - 1
