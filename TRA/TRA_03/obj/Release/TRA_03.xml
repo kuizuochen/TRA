@@ -6,11 +6,35 @@ TRA_03
 </name>
 </assembly>
 <members>
-<member name="M:TRA_03.pgStSelectionSingle.InitializeComponent">
+<member name="M:TRA_03.pgFavorite.InitializeComponent">
 	<summary>
 InitializeComponent
 </summary>
-</member><member name="M:TRA_03.pgFavorite.InitializeComponent">
+</member><member name="M:TRA_03.pgLoading.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="M:TRA_03.pgStSelectionSingle.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="M:TRA_03.pgTrainDetail.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="M:TRA_03.pgStSelection.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="M:TRA_03.App.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="M:TRA_03.MainPage.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="M:TRA_03.dfStationGrp.InitializeComponent">
 	<summary>
 InitializeComponent
 </summary>
@@ -66,10 +90,6 @@ InitializeComponent
  Sample ViewModel property; this property is used in the view to display its value using a Binding.
  </summary>
 	<returns></returns>
-</member><member name="M:TRA_03.pgLoading.InitializeComponent">
-	<summary>
-InitializeComponent
-</summary>
 </member><member name="P:TRA_03.App.ViewModel">
 	<summary>
  A static ViewModel used by the views to bind against.
@@ -84,30 +104,10 @@ InitializeComponent
 	<summary>
  Constructor for the Application object.
  </summary>
-</member><member name="M:TRA_03.pgTrainDetail.InitializeComponent">
-	<summary>
-InitializeComponent
-</summary>
-</member><member name="M:TRA_03.pgStSelection.InitializeComponent">
-	<summary>
-InitializeComponent
-</summary>
 </member><member name="T:TRA_03.LocalizedStrings">
 	<summary>
  Provides access to string resources.
  </summary>
-</member><member name="M:TRA_03.App.InitializeComponent">
-	<summary>
-InitializeComponent
-</summary>
-</member><member name="M:TRA_03.MainPage.InitializeComponent">
-	<summary>
-InitializeComponent
-</summary>
-</member><member name="M:TRA_03.dfStationGrp.InitializeComponent">
-	<summary>
-InitializeComponent
-</summary>
 </member>
 </members>
 </doc>
