@@ -190,7 +190,14 @@ Public Class clsStGrp
         mFirstSelectedStName = tFirstSelectedStName
     End Sub
 
- 
+    Public Shared Function GetRegion(AllStationGrp As List(Of clsStGrp), tGrpChName As String) As clsStGrp
+        For i As Integer = 0 To AllStationGrp.Count - 1
+            If AllStationGrp.Item(i).mChName = tGrpChName Then
+                Return AllStationGrp.Item(i)
+            End If
+        Next
+        Return Nothing
+    End Function
 
     Public Shared Function GetRegion(AllStationGrp As List(Of clsStGrp), theStation As clsStation, ByRef tGrpIndex As Integer, ByRef tStIndex As Integer) As clsStGrp
         For i As Integer = 0 To AllStationGrp.Count - 1
@@ -474,7 +481,7 @@ Public Class clsStation
             Case LineLocation.BL_CL
                 Return "深澳線"
             Case LineLocation.BL_NWLG
-                Return "內灣/六家線"
+                Return "內灣 六家"
             Case LineLocation.BL_NW
                 Return "內灣線"
             Case LineLocation.BL_LG

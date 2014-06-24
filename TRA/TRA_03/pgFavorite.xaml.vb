@@ -142,7 +142,7 @@ Partial Public Class pgFavorite
         If mInitializeState = True Then Exit Sub
 
         CType(DataContext, vmStartEndSearch).pSelectedTimeTable = lpSESearchTimeTable.SelectedItem
-        If CType(DataContext, vmStartEndSearch).pSelectedTimeTable.mIsLoaded = False Then CType(Me.DataContext, vmMain).pSESchVM.pSelectedTimeTable.LoadTimeTable()
+        If CType(DataContext, vmStartEndSearch).pSelectedTimeTable.mIsLoaded = False Then CType(DataContext, vmStartEndSearch).pSelectedTimeTable.LoadTimeTable()
 
         CType(DataContext, vmStartEndSearch).UpdateTrainList()
         SESearch_ScrollToCloestTrain()

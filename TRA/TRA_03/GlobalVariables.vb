@@ -29,7 +29,17 @@ Public Class GlobalVariables
     Public Shared gSESearchIniStID_S As Integer = 1008
     Public Shared gSESearchIniStID_E As Integer = 1025
 
+    ''Location Search & pgStSelectionSingle
+    Public Shared gUpdateLocSearchSt As Boolean = False
+    Public Shared gLocSearchStGrp As clsStGrp = Nothing
+    Public Shared gLocSearchSt As clsStation = Nothing
 
+    ''Location Search & pgStSelection
+    Public Shared gUpdateSE As Boolean = False
+    Public Shared gSEStGrp_Start As clsStGrp = Nothing
+    Public Shared gSESt_Start As clsStation = Nothing
+    Public Shared gSEStGrp_End As clsStGrp = Nothing
+    Public Shared gSESt_End As clsStation = Nothing
 
     Public Shared gStList As List(Of clsStation) = New List(Of clsStation) From {
 New clsStation(1001, "基隆", "Keelung", 1, 25.132302, 121.739466),
@@ -313,7 +323,7 @@ New clsStation(1243, "仁德", "Rende", 3, 22.9234, 120.240447)
     New clsStGrp(13, "花蓮區", "taipei", StGrpColor, New List(Of String) From {"富里", "東竹", "東里", "玉里", "三民", "瑞穗", "富源", "大富", "光復", "萬榮", "鳳林", "南平", "豐田", "壽豐", "平和", "志學", "吉安", "花蓮", "北埔", "景美", "新城", "崇德", "和仁", "和平"}, "花蓮"),
     New clsStGrp(14, "宜蘭區", "taipei", StGrpColor, New List(Of String) From {"漢本", "武塔", "南澳", "東澳", "永樂", "蘇澳新站", "新馬", "冬山", "羅東", "中里", "二結", "宜蘭", "四城", "礁溪", "頂埔", "頭城", "外澳", "龜山", "大溪", "大里", "石城"}, "宜蘭"),
     New clsStGrp(15, "平溪線", "taipei", StGrpColor, New List(Of String) From {"菁桐", "平溪", "嶺腳", "望古", "十分", "大華", "三貂嶺"}, "平溪"),
-    New clsStGrp(16, "內灣/六家", "taipei", StGrpColor, New List(Of String) From {"新竹", "北新竹", "千甲", "新莊", "竹中", "上員", "榮華", "竹東", "橫山", "九讚頭", "合興", "富貴", "內灣"}, "千甲"),
+    New clsStGrp(16, "內灣 六家", "taipei", StGrpColor, New List(Of String) From {"新竹", "北新竹", "千甲", "新莊", "竹中", "上員", "榮華", "竹東", "橫山", "九讚頭", "合興", "富貴", "內灣"}, "千甲"),
     New clsStGrp(17, "集集區", "taipei", StGrpColor, New List(Of String) From {"二水", "源泉", "濁水", "龍泉", "集集", "水里", "車埕"}, "集集"),
     New clsStGrp(18, "沙崙區", "taipei", StGrpColor, New List(Of String) From {"長榮大學", "沙崙"}, "沙崙"),
     New clsStGrp(19, "深澳線", "taipei", StGrpColor, New List(Of String) From {"瑞芳", "海科館"}, "瑞芳")
@@ -336,7 +346,7 @@ New clsStGrp_S("臺東區", "taipei", StGrpColor),
 New clsStGrp_S("花蓮區", "taipei", StGrpColor),
 New clsStGrp_S("宜蘭區", "taipei", StGrpColor),
 New clsStGrp_S("平溪線", "taipei", StGrpColor),
-New clsStGrp_S("內灣/六家", "taipei", StGrpColor),
+New clsStGrp_S("內灣 六家", "taipei", StGrpColor),
 New clsStGrp_S("集集區", "taipei", StGrpColor),
 New clsStGrp_S("沙崙區", "taipei", StGrpColor),
 New clsStGrp_S("深澳線", "taipei", StGrpColor)

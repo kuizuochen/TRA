@@ -103,6 +103,8 @@ Public Class clsTrainsInOneDay
             End If
             mIsLoaded = True 
     End Sub
+
+    ' Public Sub UnLoadTimeTable()
     Public Shared Function GetTrainsByDate(tTimeTableList As ObservableCollection(Of clsTrainsInOneDay), tDate As DateTime) As clsTrainsInOneDay
         For i As Integer = 0 To tTimeTableList.Count - 1
             If tTimeTableList.Item(i).mDate.Month = tDate.Month And tTimeTableList.Item(i).mDate.Day = tDate.Day Then

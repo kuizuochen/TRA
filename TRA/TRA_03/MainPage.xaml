@@ -612,7 +612,7 @@
                                 <Rectangle Width="4" Height="4" Grid.Row="0" Margin="0,5" Fill="#323232" VerticalAlignment="Bottom" HorizontalAlignment="Center"></Rectangle>
                                 <Rectangle Width="4" Height="4" Grid.Row="1" Margin="0,5" Fill="#323232" VerticalAlignment="Top" HorizontalAlignment="Center"></Rectangle>
                             </Grid>
-                            <toolkit:ListPicker x:Name="lpSESearchStGrp_S" Grid.Row="0" Margin="0,5,0,0" VerticalAlignment="Top" Width="150" 
+                            <!--<toolkit:ListPicker x:Name="lpSESearchStGrp_S" Grid.Row="0" Margin="0,5,0,0" VerticalAlignment="Top" Width="150" 
                                                     Style="{StaticResource styleLP}" ItemTemplate="{StaticResource dtDisplayNameLP}" FullModeItemTemplate="{StaticResource dtFullModelDisplayNameLP}"
                                                     ItemsSource="{Binding pStGrpList}" SelectedItem="{Binding pStGrp_S}" 
                                                     SelectionChanged="lpSESearchStGrp_S_SelectionChanged"></toolkit:ListPicker>
@@ -620,7 +620,21 @@
                             <toolkit:ListPicker x:Name="lpSESearchSt_S" Grid.Row="0" Margin="0,5,0,0" VerticalAlignment="Top" Width="150" ExpansionMode="FullScreenOnly"
                                                     Style="{StaticResource styleLP}" ItemTemplate="{StaticResource dtDisplayNameLP}" FullModeItemTemplate="{StaticResource dtFullModelDisplayNameLP}"
                                                     ItemsSource="{Binding pStList_S}" SelectedItem="{Binding pStation_S}"
-                                                    SelectionChanged="lpSESearchSt_S_SelectionChanged"></toolkit:ListPicker>
+                                                    SelectionChanged="lpSESearchSt_S_SelectionChanged"></toolkit:ListPicker>-->
+
+                            <Border BorderBrush="#323232" Height="45" Width="147" BorderThickness="3" VerticalAlignment="Center" Margin="2">
+                                <TextBlock x:Name="tbSEGrp_Start" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Microsoft Mhei" FontWeight="Bold" FontSize="26"
+                                               Text="{Binding pStGrp_S.DisplayName}"
+                                               MouseLeftButtonDown="tbSE_MouseLeftButtonDown"></TextBlock>
+                            </Border>
+                            <Rectangle Width="9" Margin="0,0,0,0" Height="3" Fill="#323232" HorizontalAlignment="Center" VerticalAlignment="Center" ></Rectangle>
+
+                            <Border BorderBrush="#323232" Height="45" Width="147" BorderThickness="3" VerticalAlignment="Center" Margin="2">
+                                <TextBlock x:Name="tbSESt_Start" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Microsoft Mhei" FontWeight="Bold" FontSize="26"
+                                               Text="{Binding pStation_S.DisplayName}"
+                                               MouseLeftButtonDown="tbSE_MouseLeftButtonDown"></TextBlock>
+                            </Border>
+                           
                         </StackPanel>
                         <StackPanel Grid.Row="1" Orientation="Horizontal">
                             <TextBlock Text="迄" Margin="5,0,0,0" Width="22" FontSize="22" TextWrapping="Wrap" FontFamily="Microsoft Mhei" FontWeight="Bold" HorizontalAlignment="Right"  VerticalAlignment="Center"></TextBlock>
@@ -632,7 +646,7 @@
                                 <Rectangle Width="4" Height="4" Grid.Row="0" Margin="0,5" Fill="#323232" VerticalAlignment="Bottom" HorizontalAlignment="Center"></Rectangle>
                                 <Rectangle Width="4" Height="4" Grid.Row="1" Margin="0,5" Fill="#323232" VerticalAlignment="Top" HorizontalAlignment="Center"></Rectangle>
                             </Grid>
-                            <toolkit:ListPicker x:Name="lpSESearchStGrp_E" Grid.Row="0" Margin="0,5,0,0" VerticalAlignment="Top" Width="150" 
+                            <!--<toolkit:ListPicker x:Name="lpSESearchStGrp_E" Grid.Row="0" Margin="0,5,0,0" VerticalAlignment="Top" Width="150" 
                                                     Style="{StaticResource styleLP}" ItemTemplate="{StaticResource dtDisplayNameLP}" FullModeItemTemplate="{StaticResource dtFullModelDisplayNameLP}"
                                                     ItemsSource="{Binding pStGrpList}" SelectedItem="{Binding pStGrp_E}" 
                                                     SelectionChanged="lpSESearchStGrp_E_SelectionChanged"></toolkit:ListPicker>
@@ -640,7 +654,19 @@
                             <toolkit:ListPicker x:Name="lpSESearchSt_E" Grid.Row="0" Margin="0,5,0,0" VerticalAlignment="Top" Width="150" ExpansionMode="FullScreenOnly"
                                                     Style="{StaticResource styleLP}" ItemTemplate="{StaticResource dtDisplayNameLP}" FullModeItemTemplate="{StaticResource dtFullModelDisplayNameLP}"
                                                     ItemsSource="{Binding pStList_E}" SelectedItem="{Binding pStation_E}"
-                                                    SelectionChanged="lpSESearchSt_E_SelectionChanged"></toolkit:ListPicker>
+                                                    SelectionChanged="lpSESearchSt_E_SelectionChanged"></toolkit:ListPicker>-->
+                            <Border BorderBrush="#323232" Height="45" Width="147" BorderThickness="3" VerticalAlignment="Center" Margin="2">
+                                <TextBlock x:Name="tbSEGrp_End" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Microsoft Mhei" FontWeight="Bold" FontSize="26"
+                                               Text="{Binding pStGrp_E.DisplayName}"
+                                               MouseLeftButtonDown="tbSE_MouseLeftButtonDown"></TextBlock>
+                            </Border>
+                            <Rectangle Width="9" Margin="0,0,0,0" Height="3" Fill="#323232" HorizontalAlignment="Center" VerticalAlignment="Center" ></Rectangle>
+
+                            <Border BorderBrush="#323232" Height="45" Width="147" BorderThickness="3" VerticalAlignment="Center" Margin="2">
+                                <TextBlock x:Name="tbSESt_End" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Microsoft Mhei" FontWeight="Bold" FontSize="26"
+                                               Text="{Binding pStation_E.DisplayName}"
+                                               MouseLeftButtonDown="tbSE_MouseLeftButtonDown"></TextBlock>
+                            </Border>
                         </StackPanel>
 
                         <Grid Grid.Row="2" Grid.ColumnSpan="2" Margin="20,0,10,0">
@@ -703,7 +729,7 @@
                             <toolkit:ListPicker x:Name="lpSESearchTimeTable" Grid.Row="0" Margin="0,0,6,5" VerticalAlignment="Top" Width="150" ExpansionMode="FullScreenOnly" 
                                                 Style="{StaticResource styleLP}" ItemTemplate="{StaticResource dtDisplayNameShortLP}" FullModeItemTemplate="{StaticResource dtFullModelDisplayNameLP}"
                                                 ItemsSource="{Binding pSchedule}" SelectedItem="{Binding pSelectedTimeTable}" 
-                                                FullModeHeader="切換時刻表需較約5~10秒等候時間"
+                                                FullModeHeader="切換時刻表需要約5~10秒等候時間"
                                                 SelectionChanged="lpSESearchTimeTable_SelectionChanged"></toolkit:ListPicker>
                             <toolkit:TimePicker x:Name="tpSESearchStart" Value="{Binding pDepTime_S}" Margin="0,-10,-7,0" BorderBrush="#323232" Foreground="#323232" FontFamily="Calibri" FontWeight="ExtraBold" BorderThickness="4"
                                             ValueChanged="tpSESearchStart_ValueChanged"></toolkit:TimePicker>
@@ -728,7 +754,7 @@
                 <Border BorderBrush="#323232" BorderThickness="0,3,0,0">
                     <Grid>
                         <Grid.RowDefinitions >
-                            <RowDefinition Height="70"></RowDefinition>
+                            <RowDefinition Height="60"></RowDefinition>
                             <RowDefinition Height="54"></RowDefinition>
                             <RowDefinition Height="55"></RowDefinition>
                             <RowDefinition Height="2"></RowDefinition>
@@ -738,16 +764,15 @@
                         <Grid Grid.Column="0">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" ></ColumnDefinition>
-                                <ColumnDefinition Width="150"></ColumnDefinition>
+                                <ColumnDefinition Width="170"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <Grid Grid.Column="0" Margin="0,-5,0,0">
-
-                                <Grid.RowDefinitions >
-                                    <RowDefinition Height="10"></RowDefinition>
-                                    <RowDefinition Height="90"></RowDefinition>
-                                </Grid.RowDefinitions>
-
-                                <StackPanel Grid.Row="1" Orientation="Horizontal" Height="90" Margin="10,0,0,0">
+                            <Grid Grid.Column="0" Margin="0,-5,0,0" Height="70"> 
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition Width="20"></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <!--<StackPanel   Orientation="Horizontal" Margin="0,0,0,0">
                                     <toolkit:ListPicker x:Name="lpLocationSearchStGrp" Grid.Row="0" Margin="0,5,0,0" VerticalAlignment="Top" Width="150" 
                                                     Style="{StaticResource styleLP}" ItemTemplate="{StaticResource dtDisplayNameLP}" FullModeItemTemplate="{StaticResource dtFullModelDisplayNameLP}"
                                                     ItemsSource="{Binding pStGrpList}" SelectedItem="{Binding pStGrp}" 
@@ -757,7 +782,19 @@
                                                     Style="{StaticResource styleLP}" ItemTemplate="{StaticResource dtDisplayNameLP}" FullModeItemTemplate="{StaticResource dtFullModelDisplayNameLP}"
                                                     ItemsSource="{Binding pStList}" SelectedItem="{Binding pStation}"
                                                     SelectionChanged="lpLocationSearchSt_SelectionChanged"></toolkit:ListPicker>
-                                </StackPanel>
+                                </StackPanel>-->
+                                <Border Grid.Column="0" BorderBrush="#323232" Height="45" BorderThickness="3" VerticalAlignment="Center" Margin="2">
+                                    <TextBlock x:Name="tbLocationSearchGrp" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Microsoft Mhei" FontWeight="Bold" FontSize="26"
+                                               Text="{Binding pStGrp.DisplayName}"
+                                               MouseLeftButtonDown="tbLocationSearch_MouseLeftButtonDown"></TextBlock>
+                                </Border>
+                                <Border Grid.Column="2" BorderBrush="#323232" Height="45" BorderThickness="3" VerticalAlignment="Center" Margin="2">
+                                    <TextBlock x:Name="tbLocationSearchSt" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Microsoft Mhei" FontWeight="Bold" FontSize="26"
+                                               Text="{Binding pStation.DisplayName}"
+                                               MouseLeftButtonDown="tbLocationSearch_MouseLeftButtonDown"></TextBlock>
+                                </Border>
+                                <Rectangle Grid.Column="1" Width="10" Margin="0,0,0,0" Height="3" Fill="#323232" HorizontalAlignment="Center" VerticalAlignment="Center" ></Rectangle>
+
                             </Grid>
                             <Button x:Name="btnGetCloestSt" Grid.Column="1" Height="75"  Margin="-10" Padding="0" Click="btnGetCloestSt_Click">
                                 <StackPanel  Orientation="Vertical">

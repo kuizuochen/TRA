@@ -3,22 +3,44 @@
 Partial Public Class pgStSelection
     Inherits PhoneApplicationPage
 
+    Public mStGrpStart As String
+    Public mStGrpEnd As String
+    Public mStStart As String
+    Public mStEnd As String
+
+    Private mLoading As Boolean = False
 
     Public mStringListStGrp As List(Of String) = New List(Of String) From {"臺北區", "桃園區", "新竹區", "苗栗區", "臺中區", "彰化區", "南投區", "雲林區", "嘉義區", "臺南區", "高雄區", "屏東區", "臺東區", "花蓮區", "宜蘭區", "平溪線", "內灣 六家", "集集區", "沙崙區", "深澳線"}
     Public Sub New()
         InitializeComponent()
          
+
+
+    End Sub
+
+    Protected Overrides Sub OnNavigatedTo(e As NavigationEventArgs)
+        MyBase.OnNavigatedTo(e)
+
+        mStGrpStart = NavigationContext.QueryString("StGrpStart")
+        mStGrpEnd = NavigationContext.QueryString("StGrpEnd")
+        mStStart = NavigationContext.QueryString("StStart")
+        mStEnd = NavigationContext.QueryString("StEnd") 
+
+        mLoading = True
+
         Dim _dsStGrpStart As New StringLoopingDataSourceBase(mStringListStGrp)
         AddHandler _dsStGrpStart.OnSelectionChanged, AddressOf StGrpStart_SelectionChanged
-        _dsStGrpStart.SelectedItem = "臺北區"
+        _dsStGrpStart.SelectedItem = mStGrpStart
         Me.lsStGrpStart.DataSource = _dsStGrpStart
 
         Dim _dsStGrpEnd As New StringLoopingDataSourceBase(mStringListStGrp)
         AddHandler _dsStGrpEnd.OnSelectionChanged, AddressOf StGrpEnd_SelectionChanged
-        _dsStGrpEnd.SelectedItem = "新竹區"
+        _dsStGrpEnd.SelectedItem = mStGrpEnd
         Me.lsStGrpEnd.DataSource = _dsStGrpEnd
 
+        mLoading = False
     End Sub
+
 
     Private Sub StGrpStart_SelectionChanged(previousSelectedItem As Object, newSelectedItem As Object)
 
@@ -28,7 +50,15 @@ Partial Public Class pgStSelection
         Dim _StringListStGrp As List(Of String) = _NewSelectedStGrp.mStNameList
 
         Dim _tempSD As New StringLoopingDataSourceBase(_StringListStGrp)
-        _tempSD.SelectedItem = _NewSelectedStGrp.mFirstSelectedStName
+        If mLoading Then
+            Try
+                _tempSD.SelectedItem = mStStart
+            Catch ex As Exception
+
+            End Try
+        Else
+            _tempSD.SelectedItem = _NewSelectedStGrp.mFirstSelectedStName
+        End If 
         Me.lsStStart.DataSource = _tempSD
     End Sub
 
@@ -40,7 +70,15 @@ Partial Public Class pgStSelection
         Dim _StringListStGrp As List(Of String) = _NewSelectedStGrp.mStNameList
 
         Dim _tempSD As New StringLoopingDataSourceBase(_StringListStGrp)
-        _tempSD.SelectedItem = _NewSelectedStGrp.mFirstSelectedStName
+        If mLoading Then
+            Try
+                _tempSD.SelectedItem = mStEnd
+            Catch ex As Exception
+
+            End Try
+        Else
+            _tempSD.SelectedItem = _NewSelectedStGrp.mFirstSelectedStName
+        End If
         Me.lsStEnd.DataSource = _tempSD
     End Sub
 
@@ -53,6 +91,20 @@ Partial Public Class pgStSelection
 
         Return Nothing
     End Function
+
+    Private Sub abtnCheck_Click(sender As Object, e As EventArgs) 
+        GlobalVariables.gUpdateSE = True
+        GlobalVariables.gSEStGrp_Start = clsStGrp.GetRegion(GlobalVariables.gStGrpList, Me.lsStGrpStart.DataSource.SelectedItem)
+        GlobalVariables.gSESt_Start = clsStation.GetStationByChName(Me.lsStStart.DataSource.SelectedItem)
+        GlobalVariables.gSEStGrp_End = clsStGrp.GetRegion(GlobalVariables.gStGrpList, Me.lsStGrpEnd.DataSource.SelectedItem)
+        GlobalVariables.gSESt_End = clsStation.GetStationByChName(Me.lsStEnd.DataSource.SelectedItem)
+        NavigationService.GoBack()
+    End Sub
+
+    Private Sub abtnClose_Click(sender As Object, e As EventArgs)
+        GlobalVariables.gUpdateSE = False
+        NavigationService.GoBack()
+    End Sub
 End Class
 
 Public MustInherit Class LoopingDataSourceBase

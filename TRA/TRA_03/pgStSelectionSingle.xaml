@@ -16,24 +16,30 @@
     <phone:PhoneApplicationPage.Resources>
         <DataTemplate x:Name="dtContentLS">
             <Grid>
-                <TextBlock Text="{Binding}" FontFamily="Microsoft Mhei" FontWeight="Bold" TextWrapping="Wrap"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32"/>
+               <TextBlock Text="{Binding}" FontFamily="Microsoft Mhei" FontWeight="Bold" TextWrapping="Wrap"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32"/>
             </Grid>
         </DataTemplate>
     </phone:PhoneApplicationPage.Resources>
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar>
-            <shell:ApplicationBarIconButton IconUri="Assets/Icons/one_check.png" Text="完成"/>
+          
+            <shell:ApplicationBarIconButton x:Name="abtnCheck" IconUri="Assets/Icons/one_check.png" Text="確定"
+                                            Click="abtnCheck_Click"/>  
+            <shell:ApplicationBarIconButton x:Name="abtnClose" IconUri="Assets/Icons/close.png" Text="取消"
+                                            Click="abtnClose_Click"/>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid Background="Transparent">
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition Width="40"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Column="1" Text="-" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="60"></TextBlock>
-        <toolkit:LoopingSelector x:Name="lsStGrp" Grid.Column="0" Grid.RowSpan="2"  ItemMargin="2,3,3,2" ItemSize="200,100"   ItemTemplate="{StaticResource dtContentLS}"/>
-        <toolkit:LoopingSelector x:Name="lsSt" Grid.Column="2" Grid.RowSpan="2"  ItemMargin="2,3,3,2" ItemSize="200,100"  ItemTemplate="{StaticResource dtContentLS}"/>
+        <toolkit:LoopingSelector x:Name="lsStGrp" Grid.Column="0"   ItemMargin="2,3,3,2" ItemSize="200,100"   ItemTemplate="{StaticResource dtContentLS}"/>
+        <toolkit:LoopingSelector x:Name="lsSt" Grid.Column="2"   ItemMargin="2,3,3,2" ItemSize="200,100"  ItemTemplate="{StaticResource dtContentLS}"/>
+        
     </Grid>
 </phone:PhoneApplicationPage>

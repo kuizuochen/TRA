@@ -16,13 +16,16 @@
     <phone:PhoneApplicationPage.Resources>
         <DataTemplate x:Name="dtContentLS">
             <Grid>
-                <TextBlock Text="{Binding}" TextWrapping="Wrap"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="28"/>
+                <TextBlock Text="{Binding}" TextWrapping="Wrap"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="28"  FontFamily="Microsoft Mhei" FontWeight="Bold" />
             </Grid>
         </DataTemplate>
     </phone:PhoneApplicationPage.Resources>
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar>
-            <shell:ApplicationBarIconButton IconUri="Assets/Icons/one_check.png" Text="完成"/>
+            <shell:ApplicationBarIconButton x:Name="abtnCheck" IconUri="Assets/Icons/one_check.png" Text="確定"
+                                            Click="abtnCheck_Click"/> 
+            <shell:ApplicationBarIconButton x:Name="abtnClose" IconUri="Assets/Icons/close.png" Text="取消"
+                                            Click="abtnClose_Click"/>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
     <!--LayoutRoot is the root grid where all page content is placed-->
@@ -32,27 +35,27 @@
             <ColumnDefinition Width="30"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Column="1" Text="到" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        <Image Grid.Column="1" Source="/Assets/Icons/white_arrow.png" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
+
         <Grid Grid.Column="0">
             <Grid.ColumnDefinitions>
                 
                 <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition Width="15"></ColumnDefinition>
+            <ColumnDefinition Width="16"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="1" Text="-" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+            <TextBlock Grid.Column="1" Text="-" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="40"></TextBlock>
             <toolkit:LoopingSelector Grid.Column="0" Grid.RowSpan="2"  x:Name="lsStGrpStart" ItemMargin="2,3,3,2" ItemSize="100,100"   ItemTemplate="{StaticResource dtContentLS}"/>
             <toolkit:LoopingSelector Grid.Column="2" Grid.RowSpan="2"  x:Name="lsStStart" ItemMargin="2,3,3,2" ItemSize="100,100"  ItemTemplate="{StaticResource dtContentLS}"/>
         </Grid>
 
         <Grid Grid.Column="2">
             <Grid.ColumnDefinitions>
-
                 <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition Width="15"></ColumnDefinition>
+                <ColumnDefinition Width="16"></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="1" Text="-" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+            <TextBlock Grid.Column="1" Text="-" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="40"></TextBlock>
             <toolkit:LoopingSelector Grid.Column="0" Grid.RowSpan="2"  x:Name="lsStGrpEnd" ItemMargin="2,3,3,2" ItemSize="100,100"  ItemTemplate="{StaticResource dtContentLS}"/>
             <toolkit:LoopingSelector Grid.Column="2" Grid.RowSpan="2"  x:Name="lsStEnd" ItemMargin="2,3,3,2" ItemSize="100,100"  ItemTemplate="{StaticResource dtContentLS}"/>
 
