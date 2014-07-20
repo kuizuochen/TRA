@@ -26,7 +26,7 @@ Partial Public Class MainPage
     Private abtnLocSchUpdateStatus As ApplicationBarIconButton
     Private abtnMyFavoriteRefresh As ApplicationBarIconButton
     Private abtnMyFavoriteDel As ApplicationBarIconButton
-    Private abtnNoNukeRefresh As ApplicationBarIconButton
+    Private abtnGo2GP As ApplicationBarIconButton
     Private abtnSettingCheck As ApplicationBarIconButton
 
     Private SESearchTrainListUpdate_Pause As Boolean = False
@@ -75,9 +75,9 @@ Partial Public Class MainPage
         abtnMyFavoriteDel.Text = "刪除"
         AddHandler abtnMyFavoriteDel.Click, AddressOf abtnMyFavoriteDelItem_Click
 
-        abtnNoNukeRefresh = New ApplicationBarIconButton(New Uri("Assets/Icons/rotate.png", UriKind.Relative))
-        abtnNoNukeRefresh.Text = "最新人數"
-        AddHandler abtnNoNukeRefresh.Click, AddressOf abtnNoNukeRefresh_Click
+        abtnGo2GP = New ApplicationBarIconButton(New Uri("Assets/Icons/leaf.png", UriKind.Relative))
+        abtnGo2GP.Text = "了解綠電"
+        AddHandler abtnGo2GP.Click, AddressOf OpenGPWebPage
 
         abtnSettingCheck = New ApplicationBarIconButton(New Uri("Assets/Icons/one_check.png", UriKind.Relative))
         abtnSettingCheck.Text = "確定"
@@ -108,12 +108,12 @@ Partial Public Class MainPage
 
         If Not App.ViewModel.IsDataLoaded Then
             App.ViewModel.LoadData_UIThread()
-        End If
+        End If 
 
-        ''確定是否要關閉反核頁面
-        If CType(DataContext, vmMain).pSettingVM.pShowNoNuke = False Then
+        ''確定是否要關閉 綠電頁面
+        If CType(DataContext, vmMain).pSettingVM.pShowgp = False Then
             Try
-                pvMain.Items.Remove(pvNoNuke)
+                pvMain.Items.Remove(pvGP)
             Catch ex As Exception
             End Try
         End If
@@ -145,33 +145,17 @@ Partial Public Class MainPage
         Next
     End Sub
 
-#Region "No Nuke Page"
-    Private Sub abtnNoNukeRefresh_Click(sender As Object, e As EventArgs)
-        CType(DataContext, vmMain).pNoNukeVM.UpdatePeopleCntOnline()
-    End Sub
-    Private Sub spSnedSMS_MouseLeftButtonDown(sender As Object, e As MouseButtonEventArgs)
-        CType(DataContext, vmMain).pNoNukeVM.SendSMS()
-    End Sub
-    Private Sub spOpenFbLink_MouseLeftButtonDown(sender As Object, e As MouseButtonEventArgs)
-        '  Await CType(DataContext, vmMain).pNoNuke.LaunchFB()
-        CType(DataContext, vmMain).pNoNukeVM.LaunchFB()
-    End Sub
-    Private Sub spOpenWebsite_MouseLeftButtonDown(sender As Object, e As MouseButtonEventArgs)
-        CType(DataContext, vmMain).pNoNukeVM.OpenWebPage()
-    End Sub
-    Private Sub spFinishSign_MouseLeftButtonDown(sender As Object, e As MouseButtonEventArgs)
-        popSignOK.IsOpen = True
-    End Sub
-    Private Sub btnSignOkApply_Click(sender As Object, e As RoutedEventArgs)
-        If ckSingOkOff.IsChecked = True Then
-            pvMain.Items.Remove(pvNoNuke)
-            CType(DataContext, vmMain).pSettingVM.pShowNoNuke = False
-        Else
-            CType(DataContext, vmMain).pSettingVM.pShowNoNuke = True
-            popSignOK.IsOpen = False
-        End If
+#Region "Green Power"
+    Public Sub OpenGPWebPage()
+        Dim webBrowserTask As WebBrowserTask = New WebBrowserTask()
+
+        webBrowserTask.Uri = New Uri("http://greenpower.ltc.tw/", UriKind.Absolute)
+
+        webBrowserTask.Show()
     End Sub
 #End Region
+
+ 
 #Region "My Favorite"
     Private Sub abtnMyFavoriteDelItem_Click(sender As Object, e As EventArgs)
         Try
@@ -414,7 +398,7 @@ Partial Public Class MainPage
             _Finder.DesiredAccuracyInMeters = UInt32.Parse(200)
             _Finder.DesiredAccuracy = PositionAccuracy.Default
 
-            _CurrentLoc = Await _Finder.GetGeopositionAsync(TimeSpan.FromMinutes(1), TimeSpan.FromSeconds(30)) 
+            _CurrentLoc = Await _Finder.GetGeopositionAsync(TimeSpan.FromMinutes(1), TimeSpan.FromSeconds(30))
             _CloestSt = clsStation.GetCloestSt(gStList, _CurrentLoc)
 
 
@@ -459,7 +443,7 @@ Partial Public Class MainPage
         Dim _tempStName As clsStation = CType(DataContext, vmMain).pSESchVM.pStation_S
 
         CType(DataContext, vmMain).pSESchVM.pStGrp_S = CType(DataContext, vmMain).pSESchVM.pStGrp_E
-        CType(DataContext, vmMain).pSESchVM.pStation_S = CType(DataContext, vmMain).pSESchVM.pStation_E 
+        CType(DataContext, vmMain).pSESchVM.pStation_S = CType(DataContext, vmMain).pSESchVM.pStation_E
         CType(DataContext, vmMain).pSESchVM.pStGrp_E = _tempStGrp
         CType(DataContext, vmMain).pSESchVM.pStation_E = _tempStName
 
@@ -600,7 +584,7 @@ Partial Public Class MainPage
         CType(Me.DataContext, vmMain).pSESchVM.UpdateTrainList()
         SESearch_ScrollToCloestTrain()
     End Sub
-     
+
 
     Private Sub tbSE_MouseLeftButtonDown(sender As Object, e As MouseButtonEventArgs)
         GlobalVariables.gUpdateLocSearchSt = False
@@ -732,7 +716,7 @@ Partial Public Class MainPage
         ''     If True Then Exit Sub
         Me.ApplicationBar.Buttons.Clear()
 
-        Dim _ChangeColorToNoNuke As Boolean = False
+        Dim _ChangeColorToGP As Boolean = False
 
         If CType(sender, Pivot).SelectedItem.Equals(pvSESearch) Then
             Me.ApplicationBar.Buttons.Add(abtnSESearchUpdateStatus)
@@ -747,9 +731,9 @@ Partial Public Class MainPage
             Me.ApplicationBar.Buttons.Add(abtnMyFavoriteRefresh)
             Me.ApplicationBar.Buttons.Add(abtnMyFavoriteDel)
             CType(DataContext, vmMain).pMyFavoriteVM.UpdateAllCloest3Trains()
-        ElseIf CType(sender, Pivot).SelectedItem.Equals(pvNoNuke) Then
-            Me.ApplicationBar.Buttons.Add(abtnNoNukeRefresh)
-            _ChangeColorToNoNuke = True
+        ElseIf CType(sender, Pivot).SelectedItem.Equals(pvGP) Then
+            Me.ApplicationBar.Buttons.Add(abtnGo2GP)
+            _ChangeColorToGP = True
         ElseIf CType(sender, Pivot).SelectedItem.Equals(pvSetting) Then
             Me.ApplicationBar.Buttons.Add(abtnSettingCheck)
         End If
@@ -758,9 +742,9 @@ Partial Public Class MainPage
         SetSelectNothing_AllLongListSelector()
 
         Dim _PivotBgBrush As SolidColorBrush = Me.Resources("SceneBgColor")
-        If _PivotBgBrush.Color = Me.Resources("LightGray") And _ChangeColorToNoNuke = True Then
-            _PivotBgBrush.Color = Me.Resources("NoNukeYellow")
-        ElseIf _PivotBgBrush.Color = Me.Resources("NoNukeYellow") And _ChangeColorToNoNuke = False Then
+        If _PivotBgBrush.Color = Me.Resources("LightGray") And _ChangeColorToGP = True Then
+            _PivotBgBrush.Color = Me.Resources("GreenPowerGreen")
+        ElseIf _PivotBgBrush.Color = Me.Resources("GreenPowerGreen") And _ChangeColorToGP = False Then
             _PivotBgBrush.Color = Me.Resources("LightGray")
         End If
 
@@ -768,16 +752,9 @@ Partial Public Class MainPage
 #End Region
 
 #Region "Setting"
-    Private Sub tsOffNoNuke_Click(sender As Object, e As RoutedEventArgs)
-        CType(DataContext, vmMain).pSettingVM.pShowNoNuke = tsOffNoNuke.IsChecked
-        If tsOffNoNuke.IsChecked = False And mShowNoNukePop Then
-            mShowNoNukePop = False
-            Try
-                pvMain.Items.Remove(pvNoNuke)
-                popReopenOK.IsOpen = True
-            Catch ex As Exception
-            End Try
-        End If
+
+    Private Sub tsGP_Click(sender As Object, e As RoutedEventArgs)
+
     End Sub
     Private Sub btnReopenOk_Click(sender As Object, e As RoutedEventArgs)
         popReopenOK.IsOpen = False
@@ -797,6 +774,7 @@ Partial Public Class MainPage
         End If
 
     End Sub
+
 
     Private Sub btnUpdateCancel_Click(sender As Object, e As RoutedEventArgs)
         Try
@@ -968,6 +946,7 @@ Partial Public Class MainPage
     End Sub
 #End Region
 #End Region
+
 
 
 

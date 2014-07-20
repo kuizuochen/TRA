@@ -41,14 +41,14 @@ Public Class vmSetting
             RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs("pDayCntToAutoUpdate"))
         End Set
     End Property
-    Public mShowNoNuke As Boolean = True
-    Public Property pShowNoNuke As Boolean
+    Public mShowGP As Boolean = True
+    Public Property pShowGP As Boolean
         Get
-            Return mShowNoNuke
+            Return mShowGP
         End Get
         Set(value As Boolean)
-            mShowNoNuke = value
-            RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs("pShowNoNuke"))
+            mShowGP = value
+            RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs("pShowGP"))
         End Set
     End Property
 
@@ -63,11 +63,13 @@ Public Class vmSetting
 
         _Result += "_" + pDayCntToAutoUpdate.ToString
 
-        If pShowNoNuke = True Then
+        ''原本為 NoNuke頁面 設定 目前已經移除
+        ''   If pShowNoNuke = True Then
+        If True Then
             _Result += "_1"
         Else
             _Result += "_0"
-        End If
+        End If 
 
         If pIsFirstTilePicSelected = True Then
             _Result += "_1"
@@ -105,6 +107,12 @@ Public Class vmSetting
             _Result += "_0"
         End If
 
+        If pShowGP = True Then
+            _Result += "_1"
+        Else
+            _Result += "_0"
+        End If
+
         Return _Result
     End Function
     Public Sub LoadFromIsoSetting(ByRef tIsoSetting As System.IO.IsolatedStorage.IsolatedStorageSettings)
@@ -123,14 +131,14 @@ Public Class vmSetting
 
         pDayCntToAutoUpdate = CInt(_IsoSettingStrings(1))
 
-        If _IsoSettingStrings(2) = "0" Then pShowNoNuke = False
-        If _IsoSettingStrings(2) = "1" Then pShowNoNuke = True
+        ''參數 _IsoSettingStrings(2)  原本為 NoNuke頁面 設定 目前已經移除 
 
         If _IsoSettingStrings(3) = "0" Then pIsFirstTilePicSelected = False
         If _IsoSettingStrings(3) = "1" Then pIsFirstTilePicSelected = True
 
         If _IsoSettingStrings(4) = "0" Then pIsSecondTilePicSelected = False
         If _IsoSettingStrings(4) = "1" Then pIsSecondTilePicSelected = True
+
 
         Try
             If _IsoSettingStrings(5) = "0" Then pIsFirstTilePicSelected_1 = False
@@ -142,6 +150,15 @@ Public Class vmSetting
             If _IsoSettingStrings(7) = "1" Then pIsFirstTilePicSelected_2 = True
             If _IsoSettingStrings(8) = "0" Then pIsSecondTilePicSelected_2 = False
             If _IsoSettingStrings(8) = "1" Then pIsSecondTilePicSelected_2 = True
+
+
+        Catch ex As Exception
+
+        End Try
+
+        Try
+            If _IsoSettingStrings(9) = "0" Then pShowGP = False
+            If _IsoSettingStrings(9) = "1" Then pShowGP = True
         Catch ex As Exception
 
         End Try

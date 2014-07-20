@@ -1,6 +1,6 @@
-﻿<xapCache source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Bin\Release\TRA_03_Release_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="2014/6/24 下午 07:55:08">
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\obj\Release\TRA_03.dll" archivePath="TRA_03.dll" lastWriteTime="2014/6/24 下午 07:54:53" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\obj\Release\zh-Hant\TRA_03.resources.dll" archivePath="zh-Hant\TRA_03.resources.dll" lastWriteTime="2014/6/24 下午 07:54:54" />
+﻿<xapCache source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Bin\Release\TRA_03_Release_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="2014/7/20 下午 08:11:45">
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\obj\Release\TRA_03.dll" archivePath="TRA_03.dll" lastWriteTime="2014/7/20 下午 08:11:32" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\obj\Release\zh-Hant\TRA_03.resources.dll" archivePath="zh-Hant\TRA_03.resources.dll" lastWriteTime="2014/7/20 下午 08:11:32" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\AlignmentGrid.png" archivePath="Assets\AlignmentGrid.png" lastWriteTime="2014/2/25 下午 07:22:35" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\ApplicationIcon.png" archivePath="Assets\ApplicationIcon.png" lastWriteTime="2014/2/25 下午 07:22:35" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DebugTimeTable\20131005.xml" archivePath="Assets\DebugTimeTable\20131005.xml" lastWriteTime="2014/3/2 上午 08:40:13" />
@@ -49,6 +49,7 @@
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20140803.xml" archivePath="Assets\DefaultTimeTable\20140803.xml" lastWriteTime="2014/6/23 上午 11:02:08" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20140804.xml" archivePath="Assets\DefaultTimeTable\20140804.xml" lastWriteTime="2014/6/23 上午 11:02:16" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20140805.xml" archivePath="Assets\DefaultTimeTable\20140805.xml" lastWriteTime="2014/6/23 上午 11:02:22" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\GP\greenpower.JPG" archivePath="Assets\GP\greenpower.JPG" lastWriteTime="2014/7/20 下午 07:02:15" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\Icons\Bike.png" archivePath="Assets\Icons\Bike.png" lastWriteTime="2014/3/17 下午 09:51:01" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\Icons\black_arrow.png" archivePath="Assets\Icons\black_arrow.png" lastWriteTime="2014/3/27 下午 11:40:48" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\Icons\checkmark_pencil.png" archivePath="Assets\Icons\checkmark_pencil.png" lastWriteTime="2014/3/27 下午 11:40:48" />
@@ -62,6 +63,7 @@
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\Icons\facebook.png" archivePath="Assets\Icons\facebook.png" lastWriteTime="2014/3/27 下午 11:40:48" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\Icons\geoloc.png" archivePath="Assets\Icons\geoloc.png" lastWriteTime="2014/3/27 下午 11:40:48" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\Icons\globe.png" archivePath="Assets\Icons\globe.png" lastWriteTime="2014/3/27 下午 11:40:48" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\Icons\leaf.png" archivePath="Assets\Icons\leaf.png" lastWriteTime="2014/3/27 下午 11:40:48" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\Icons\logo.png" archivePath="Assets\Icons\logo.png" lastWriteTime="2014/4/20 下午 10:59:01" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\Icons\magnify_down.png" archivePath="Assets\Icons\magnify_down.png" lastWriteTime="2014/3/27 下午 11:40:48" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\Icons\Milk.png" archivePath="Assets\Icons\Milk.png" lastWriteTime="2014/3/17 下午 09:51:01" />
@@ -72,6 +74,7 @@
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\Icons\rotate.png" archivePath="Assets\Icons\rotate.png" lastWriteTime="2014/3/27 下午 11:40:48" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\Icons\update.png" archivePath="Assets\Icons\update.png" lastWriteTime="2014/1/12 下午 03:54:25" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\Icons\white_arrow.png" archivePath="Assets\Icons\white_arrow.png" lastWriteTime="2014/3/27 下午 11:40:48" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\Icons\white_globe.png" archivePath="Assets\Icons\white_globe.png" lastWriteTime="2014/3/27 下午 11:40:48" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\NoNuke\banner.jpg" archivePath="Assets\NoNuke\banner.jpg" lastWriteTime="2014/4/17 下午 11:16:22" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\NoNuke\NoNukeFlag_691_336.jpg" archivePath="Assets\NoNuke\NoNukeFlag_691_336.jpg" lastWriteTime="2014/4/19 下午 03:56:42" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\NoNuke\NoNukeYellow_691_336.jpg" archivePath="Assets\NoNuke\NoNukeYellow_691_336.jpg" lastWriteTime="2014/4/22 下午 08:19:57" />
@@ -90,7 +93,7 @@
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Toolkit.Content\ApplicationBar.Check.png" archivePath="Toolkit.Content\ApplicationBar.Check.png" lastWriteTime="2014/2/25 下午 07:51:17" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Toolkit.Content\ApplicationBar.Delete.png" archivePath="Toolkit.Content\ApplicationBar.Delete.png" lastWriteTime="2014/2/25 下午 07:51:17" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Toolkit.Content\ApplicationBar.Select.png" archivePath="Toolkit.Content\ApplicationBar.Select.png" lastWriteTime="2014/2/25 下午 07:51:16" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Bin\Release\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="2014/6/24 下午 07:52:54" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Bin\Release\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="2014/6/24 下午 08:04:29" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\packages\Coding4Fun.Toolkit.Audio.2.0.7\lib\windowsphone8\Coding4Fun.Toolkit.Audio.dll" archivePath="Coding4Fun.Toolkit.Audio.dll" lastWriteTime="2014/4/11 上午 12:09:00" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\packages\Coding4Fun.Toolkit.Controls.2.0.7\lib\windowsphone8\Coding4Fun.Toolkit.Controls.dll" archivePath="Coding4Fun.Toolkit.Controls.dll" lastWriteTime="2014/4/11 上午 12:09:01" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\packages\Coding4Fun.Toolkit.Net.2.0.7\lib\windowsphone8\Coding4Fun.Toolkit.Net.dll" archivePath="Coding4Fun.Toolkit.Net.dll" lastWriteTime="2014/4/11 上午 12:09:01" />
@@ -100,5 +103,5 @@
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\packages\SharpZipLib-WP7.0.86.0.518\lib\sl4-windowsphone71\SharpZipLib.WindowsPhone7.dll" archivePath="SharpZipLib.WindowsPhone7.dll" lastWriteTime="2014/2/26 下午 10:37:35" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\Tiles\icon336_2.png" archivePath="Assets\Tiles\icon336_2.png" lastWriteTime="2014/5/7 下午 11:13:14" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\Tiles\icon_159_2.png" archivePath="Assets\Tiles\icon_159_2.png" lastWriteTime="2014/5/7 下午 10:58:24" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Bin\Release\My Project\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="2014/6/24 下午 07:52:54" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Bin\Release\My Project\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="2014/6/24 下午 08:04:29" />
 </xapCache>

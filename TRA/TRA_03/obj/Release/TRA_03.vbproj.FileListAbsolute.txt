@@ -252,7 +252,7 @@ C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\obj\Release\TRA_03.dll
 C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\obj\Release\TRA_03.xml
 C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\obj\Release\TRA_03.pdb
 C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\obj\Release\XapCacheFile.xml
-C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\obj\Release\TRA_03.vbprojResolveAssemblyReference.cache
 C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\obj\Release\pgStSelection.g.i.vb
 C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Bin\Release\Microsoft.Phone.Controls.dll
 C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\obj\Release\pgStSelectionSingle.g.i.vb
+C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\obj\Release\TRA_03.vbprojResolveAssemblyReference.cache
