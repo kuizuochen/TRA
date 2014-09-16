@@ -994,7 +994,7 @@ Public Class clsTrainTimeInfo
         Return tTrainInfoList.Item(0)
     End Function
 
-    Public Shared Function GetCloestTrains(tTrainInfoList As ObservableCollection(Of clsTrainTimeInfo), tCnt As Integer, tYear As Integer, tMonth As Integer, tDate As Integer) As List(Of clsTrainTimeInfo)
+    Public Shared Function GetCloestTrains(tTrainInfoList As ObservableCollection(Of clsTrainTimeInfo), tBeforeCnt As Integer, tAfterCnt As Integer, tYear As Integer, tMonth As Integer, tDate As Integer) As List(Of clsTrainTimeInfo)
         If tTrainInfoList Is Nothing OrElse tTrainInfoList.Count = 0 Then Return Nothing
 
         Dim _token As Integer = 0
@@ -1005,14 +1005,27 @@ Public Class clsTrainTimeInfo
         Dim _ZeroTime As TimeSpan = New TimeSpan(0)
         Dim _DiffTime As TimeSpan
 
+        Dim _ClosetTrainID As Integer = -1
+
         For i As Integer = 0 To tTrainInfoList.Count - 1
             _DiffTime = tTrainInfoList.Item(i).pTimeInfo_Dep.mDEPTime - _Current
             If tTrainInfoList.Item(i).pTimeInfo_Dep.mDEPTime - _Current > _ZeroTime Then
+                If _ClosetTrainID = -1 Then _ClosetTrainID = i
                 ResultTrains.Add(tTrainInfoList.Item(i))
                 _token += 1
-                If _token >= tCnt Then Exit For
+                If _token >= tAfterCnt Then Exit For
             End If
-        Next 
+        Next
+
+        If _ClosetTrainID > 1 And tBeforeCnt > 0 Then
+            _token = 0
+            For i As Integer = _ClosetTrainID - 1 To 0 Step -1
+                ResultTrains.Add(tTrainInfoList.Item(i))
+                _token += 1
+                If _token >= tBeforeCnt Then Exit For
+            Next
+        End If
+
 
         Return ResultTrains
     End Function

@@ -205,12 +205,12 @@ Partial Public Class MainPage
         LocSch_ScrollToCloestTrain()
     End Sub
     Private Sub abtnLocSchUpdateStatus_Click(sender As Object, e As EventArgs)
-        Dim _CloestTrainsFW As List(Of clsTrainTimeInfo) = clsTrainTimeInfo.GetCloestTrains(CType(DataContext, vmMain).pLocSchVM.pTrainListFW, 3, DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day)
+        Dim _CloestTrainsFW As List(Of clsTrainTimeInfo) = clsTrainTimeInfo.GetCloestTrains(CType(DataContext, vmMain).pLocSchVM.pTrainListFW, 2, 5, DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day)
         For i As Integer = 0 To _CloestTrainsFW.Count - 1
             _CloestTrainsFW.Item(i).UpdateStatusOnline()
         Next
 
-        Dim _CloestTrainsBW As List(Of clsTrainTimeInfo) = clsTrainTimeInfo.GetCloestTrains(CType(DataContext, vmMain).pLocSchVM.pTrainListBW, 3, DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day)
+        Dim _CloestTrainsBW As List(Of clsTrainTimeInfo) = clsTrainTimeInfo.GetCloestTrains(CType(DataContext, vmMain).pLocSchVM.pTrainListBW, 2, 5, DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day)
         For i As Integer = 0 To _CloestTrainsBW.Count - 1
             _CloestTrainsBW.Item(i).UpdateStatusOnline()
         Next
@@ -457,7 +457,7 @@ Partial Public Class MainPage
         SESearch_ScrollToCloestTrain()
     End Sub
     Private Sub abtnSESearchUpdateStatus_Click(sender As Object, e As EventArgs)
-        Dim _CloestTrains As List(Of clsTrainTimeInfo) = clsTrainTimeInfo.GetCloestTrains(CType(DataContext, vmMain).pSESchVM.pTrainList, 3, DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day)
+        Dim _CloestTrains As List(Of clsTrainTimeInfo) = clsTrainTimeInfo.GetCloestTrains(CType(DataContext, vmMain).pSESchVM.pTrainList, 2, 5, DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day)
         For i As Integer = 0 To _CloestTrains.Count - 1
             _CloestTrains.Item(i).UpdateStatusOnline()
         Next

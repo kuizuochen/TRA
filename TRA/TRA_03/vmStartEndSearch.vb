@@ -422,7 +422,7 @@ MinusOneHour:
 
         If pTrainList Is Nothing Or pTrainList.Count = 0 Then Exit Sub
 
-        Dim _ThreeCloestTrains As List(Of clsTrainTimeInfo) = clsTrainTimeInfo.GetCloestTrains(pTrainList, 3, DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day)
+        Dim _ThreeCloestTrains As List(Of clsTrainTimeInfo) = clsTrainTimeInfo.GetCloestTrains(pTrainList, 0, 3, DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day)
         If _ThreeCloestTrains Is Nothing Then Exit Sub
 
         If _ThreeCloestTrains.Count > 0 Then

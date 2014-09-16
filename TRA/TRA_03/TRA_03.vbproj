@@ -134,6 +134,7 @@
       <DependentUpon>dfStationGrp.xaml</DependentUpon>
     </Compile>
     <Compile Include="GlobalVariables.vb" />
+    <Compile Include="ObservationCollection_adv.vb" />
     <Compile Include="pgFavorite.xaml.vb">
       <DependentUpon>pgFavorite.xaml</DependentUpon>
     </Compile>
@@ -221,33 +222,6 @@
     </Content>
     <Content Include="Assets\DebugTimeTable\20131005.xml" />
     <Content Include="Assets\DebugTimeTable\20140303.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140818.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140819.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140820.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140821.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140822.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140823.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140824.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140825.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140826.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140827.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140828.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140829.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140830.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140831.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140901.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140902.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140903.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140904.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140905.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140906.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140907.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140908.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140909.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140910.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140911.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140912.xml" />
-    <Content Include="Assets\DefaultTimeTable\20140913.xml" />
     <Content Include="Assets\DefaultTimeTable\20140914.xml" />
     <Content Include="Assets\DefaultTimeTable\20140915.xml" />
     <Content Include="Assets\DefaultTimeTable\20140916.xml" />
@@ -265,6 +239,33 @@
     <Content Include="Assets\DefaultTimeTable\20140928.xml" />
     <Content Include="Assets\DefaultTimeTable\20140929.xml" />
     <Content Include="Assets\DefaultTimeTable\20140930.xml" />
+    <Content Include="Assets\DefaultTimeTable\20141001.xml" />
+    <Content Include="Assets\DefaultTimeTable\20141002.xml" />
+    <Content Include="Assets\DefaultTimeTable\20141003.xml" />
+    <Content Include="Assets\DefaultTimeTable\20141004.xml" />
+    <Content Include="Assets\DefaultTimeTable\20141005.xml" />
+    <Content Include="Assets\DefaultTimeTable\20141006.xml" />
+    <Content Include="Assets\DefaultTimeTable\20141007.xml" />
+    <Content Include="Assets\DefaultTimeTable\20141008.xml" />
+    <Content Include="Assets\DefaultTimeTable\20141009.xml" />
+    <Content Include="Assets\DefaultTimeTable\20141010.xml" />
+    <Content Include="Assets\DefaultTimeTable\20141011.xml" />
+    <Content Include="Assets\DefaultTimeTable\20141012.xml" />
+    <Content Include="Assets\DefaultTimeTable\20141013.xml" />
+    <Content Include="Assets\DefaultTimeTable\20141014.xml" />
+    <Content Include="Assets\DefaultTimeTable\20141015.xml" />
+    <Content Include="Assets\DefaultTimeTable\20141016.xml" />
+    <Content Include="Assets\DefaultTimeTable\20141017.xml" />
+    <Content Include="Assets\DefaultTimeTable\20141018.xml" />
+    <Content Include="Assets\DefaultTimeTable\20141019.xml" />
+    <Content Include="Assets\DefaultTimeTable\20141020.xml" />
+    <Content Include="Assets\DefaultTimeTable\20141021.xml" />
+    <Content Include="Assets\DefaultTimeTable\20141022.xml" />
+    <Content Include="Assets\DefaultTimeTable\20141023.xml" />
+    <Content Include="Assets\DefaultTimeTable\20141024.xml" />
+    <Content Include="Assets\DefaultTimeTable\20141025.xml" />
+    <Content Include="Assets\DefaultTimeTable\20141026.xml" />
+    <Content Include="Assets\DefaultTimeTable\20141027.xml" />
     <Content Include="Assets\GP\greenpower.JPG" />
     <Content Include="Assets\Icons\Bike.png" />
     <Content Include="Assets\Icons\black_arrow.png" />
@@ -342,6 +343,7 @@
     <Reference Include="Coding4Fun.Toolkit.Storage">
       <HintPath>..\packages\Coding4Fun.Toolkit.Storage.2.0.7\lib\windowsphone8\Coding4Fun.Toolkit.Storage.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=3.9.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Phone.Controls.Toolkit">
       <HintPath>..\packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
@@ -349,6 +351,7 @@
     <Reference Include="SharpZipLib.WindowsPhone7">
       <HintPath>..\packages\SharpZipLib-WP7.0.86.0.518\lib\sl4-windowsphone71\SharpZipLib.WindowsPhone7.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=3.9.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
