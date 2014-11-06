@@ -1,56 +1,56 @@
-﻿<xapCache source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Bin\Release\TRA_03_Release_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="2014/9/16 下午 10:23:05">
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\obj\Release\TRA_03.dll" archivePath="TRA_03.dll" lastWriteTime="2014/9/16 下午 10:22:50" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\obj\Release\zh-Hant\TRA_03.resources.dll" archivePath="zh-Hant\TRA_03.resources.dll" lastWriteTime="2014/9/16 下午 10:22:50" />
+﻿<xapCache source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Bin\Release\TRA_03_Release_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="2014/11/6 下午 09:47:24">
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\obj\Release\TRA_03.dll" archivePath="TRA_03.dll" lastWriteTime="2014/11/6 下午 09:47:10" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\obj\Release\zh-Hant\TRA_03.resources.dll" archivePath="zh-Hant\TRA_03.resources.dll" lastWriteTime="2014/11/6 下午 09:47:10" />
   <file source="C:\Program Files (x86)\Microsoft SDKs\Expression\Blend\Windows Phone\v8.0\Libraries\zh-Hant\Microsoft.Expression.Interactions.resources.dll" archivePath="zh-Hant\Microsoft.Expression.Interactions.resources.dll" lastWriteTime="2012/9/25 上午 02:06:16" />
   <file source="C:\Program Files (x86)\Microsoft SDKs\Expression\Blend\Windows Phone\v8.0\Libraries\zh-Hant\System.Windows.Interactivity.resources.dll" archivePath="zh-Hant\System.Windows.Interactivity.resources.dll" lastWriteTime="2012/9/25 上午 02:06:16" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\AlignmentGrid.png" archivePath="Assets\AlignmentGrid.png" lastWriteTime="2014/2/25 下午 07:22:35" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\ApplicationIcon.png" archivePath="Assets\ApplicationIcon.png" lastWriteTime="2014/2/25 下午 07:22:35" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DebugTimeTable\20131005.xml" archivePath="Assets\DebugTimeTable\20131005.xml" lastWriteTime="2014/3/2 上午 08:40:13" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DebugTimeTable\20140303.xml" archivePath="Assets\DebugTimeTable\20140303.xml" lastWriteTime="2014/3/2 上午 09:26:20" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20140914.xml" archivePath="Assets\DefaultTimeTable\20140914.xml" lastWriteTime="2014/9/14 上午 04:01:28" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20140915.xml" archivePath="Assets\DefaultTimeTable\20140915.xml" lastWriteTime="2014/9/14 上午 04:01:34" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20140916.xml" archivePath="Assets\DefaultTimeTable\20140916.xml" lastWriteTime="2014/9/14 上午 04:01:40" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20140917.xml" archivePath="Assets\DefaultTimeTable\20140917.xml" lastWriteTime="2014/9/14 上午 04:01:46" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20140918.xml" archivePath="Assets\DefaultTimeTable\20140918.xml" lastWriteTime="2014/9/14 上午 04:01:52" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20140919.xml" archivePath="Assets\DefaultTimeTable\20140919.xml" lastWriteTime="2014/9/14 上午 04:01:58" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20140920.xml" archivePath="Assets\DefaultTimeTable\20140920.xml" lastWriteTime="2014/9/14 上午 04:02:08" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20140921.xml" archivePath="Assets\DefaultTimeTable\20140921.xml" lastWriteTime="2014/9/14 上午 04:02:18" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20140922.xml" archivePath="Assets\DefaultTimeTable\20140922.xml" lastWriteTime="2014/9/14 上午 04:02:24" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20140923.xml" archivePath="Assets\DefaultTimeTable\20140923.xml" lastWriteTime="2014/9/14 上午 04:02:30" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20140924.xml" archivePath="Assets\DefaultTimeTable\20140924.xml" lastWriteTime="2014/9/14 上午 04:02:36" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20140925.xml" archivePath="Assets\DefaultTimeTable\20140925.xml" lastWriteTime="2014/9/14 上午 04:02:42" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20140926.xml" archivePath="Assets\DefaultTimeTable\20140926.xml" lastWriteTime="2014/9/14 上午 04:02:48" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20140927.xml" archivePath="Assets\DefaultTimeTable\20140927.xml" lastWriteTime="2014/9/14 上午 04:02:58" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20140928.xml" archivePath="Assets\DefaultTimeTable\20140928.xml" lastWriteTime="2014/9/14 上午 04:03:08" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20140929.xml" archivePath="Assets\DefaultTimeTable\20140929.xml" lastWriteTime="2014/9/14 上午 04:03:14" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20140930.xml" archivePath="Assets\DefaultTimeTable\20140930.xml" lastWriteTime="2014/9/14 上午 04:03:20" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141001.xml" archivePath="Assets\DefaultTimeTable\20141001.xml" lastWriteTime="2014/9/14 上午 04:03:30" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141002.xml" archivePath="Assets\DefaultTimeTable\20141002.xml" lastWriteTime="2014/9/14 上午 04:03:36" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141003.xml" archivePath="Assets\DefaultTimeTable\20141003.xml" lastWriteTime="2014/9/14 上午 04:03:42" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141004.xml" archivePath="Assets\DefaultTimeTable\20141004.xml" lastWriteTime="2014/9/14 上午 04:03:48" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141005.xml" archivePath="Assets\DefaultTimeTable\20141005.xml" lastWriteTime="2014/9/14 上午 04:03:56" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141006.xml" archivePath="Assets\DefaultTimeTable\20141006.xml" lastWriteTime="2014/9/14 上午 04:04:02" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141007.xml" archivePath="Assets\DefaultTimeTable\20141007.xml" lastWriteTime="2014/9/14 上午 04:04:08" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141008.xml" archivePath="Assets\DefaultTimeTable\20141008.xml" lastWriteTime="2014/9/14 上午 04:04:14" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141009.xml" archivePath="Assets\DefaultTimeTable\20141009.xml" lastWriteTime="2014/9/14 上午 04:04:24" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141010.xml" archivePath="Assets\DefaultTimeTable\20141010.xml" lastWriteTime="2014/9/14 上午 04:04:34" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141011.xml" archivePath="Assets\DefaultTimeTable\20141011.xml" lastWriteTime="2014/9/14 上午 04:04:44" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141012.xml" archivePath="Assets\DefaultTimeTable\20141012.xml" lastWriteTime="2014/9/14 上午 04:04:50" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141013.xml" archivePath="Assets\DefaultTimeTable\20141013.xml" lastWriteTime="2014/9/14 上午 04:04:56" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141014.xml" archivePath="Assets\DefaultTimeTable\20141014.xml" lastWriteTime="2014/9/14 上午 04:05:06" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141015.xml" archivePath="Assets\DefaultTimeTable\20141015.xml" lastWriteTime="2014/9/14 上午 04:05:12" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141016.xml" archivePath="Assets\DefaultTimeTable\20141016.xml" lastWriteTime="2014/9/14 上午 04:05:18" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141017.xml" archivePath="Assets\DefaultTimeTable\20141017.xml" lastWriteTime="2014/9/14 上午 04:05:24" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141018.xml" archivePath="Assets\DefaultTimeTable\20141018.xml" lastWriteTime="2014/9/14 上午 04:05:32" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141019.xml" archivePath="Assets\DefaultTimeTable\20141019.xml" lastWriteTime="2014/9/14 上午 04:05:38" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141020.xml" archivePath="Assets\DefaultTimeTable\20141020.xml" lastWriteTime="2014/9/14 上午 04:05:44" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141021.xml" archivePath="Assets\DefaultTimeTable\20141021.xml" lastWriteTime="2014/9/14 上午 04:05:50" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141022.xml" archivePath="Assets\DefaultTimeTable\20141022.xml" lastWriteTime="2014/9/14 上午 04:05:56" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141023.xml" archivePath="Assets\DefaultTimeTable\20141023.xml" lastWriteTime="2014/9/14 上午 04:06:02" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141024.xml" archivePath="Assets\DefaultTimeTable\20141024.xml" lastWriteTime="2014/9/14 上午 04:06:08" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141025.xml" archivePath="Assets\DefaultTimeTable\20141025.xml" lastWriteTime="2014/9/14 上午 04:06:14" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141026.xml" archivePath="Assets\DefaultTimeTable\20141026.xml" lastWriteTime="2014/9/14 上午 04:06:20" />
-  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141027.xml" archivePath="Assets\DefaultTimeTable\20141027.xml" lastWriteTime="2014/9/14 上午 04:06:26" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141104.xml" archivePath="Assets\DefaultTimeTable\20141104.xml" lastWriteTime="2014/11/4 上午 04:01:24" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141105.xml" archivePath="Assets\DefaultTimeTable\20141105.xml" lastWriteTime="2014/11/4 上午 04:01:30" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141106.xml" archivePath="Assets\DefaultTimeTable\20141106.xml" lastWriteTime="2014/11/4 上午 04:01:36" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141107.xml" archivePath="Assets\DefaultTimeTable\20141107.xml" lastWriteTime="2014/11/4 上午 04:01:42" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141108.xml" archivePath="Assets\DefaultTimeTable\20141108.xml" lastWriteTime="2014/11/4 上午 04:01:54" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141109.xml" archivePath="Assets\DefaultTimeTable\20141109.xml" lastWriteTime="2014/11/4 上午 04:02:00" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141110.xml" archivePath="Assets\DefaultTimeTable\20141110.xml" lastWriteTime="2014/11/4 上午 04:02:12" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141111.xml" archivePath="Assets\DefaultTimeTable\20141111.xml" lastWriteTime="2014/11/4 上午 04:02:18" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141112.xml" archivePath="Assets\DefaultTimeTable\20141112.xml" lastWriteTime="2014/11/4 上午 04:02:24" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141113.xml" archivePath="Assets\DefaultTimeTable\20141113.xml" lastWriteTime="2014/11/4 上午 04:02:30" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141114.xml" archivePath="Assets\DefaultTimeTable\20141114.xml" lastWriteTime="2014/11/4 上午 04:02:36" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141115.xml" archivePath="Assets\DefaultTimeTable\20141115.xml" lastWriteTime="2014/11/4 上午 04:02:48" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141116.xml" archivePath="Assets\DefaultTimeTable\20141116.xml" lastWriteTime="2014/11/4 上午 04:02:54" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141117.xml" archivePath="Assets\DefaultTimeTable\20141117.xml" lastWriteTime="2014/11/4 上午 04:03:06" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141118.xml" archivePath="Assets\DefaultTimeTable\20141118.xml" lastWriteTime="2014/11/4 上午 04:03:20" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141119.xml" archivePath="Assets\DefaultTimeTable\20141119.xml" lastWriteTime="2014/11/4 上午 04:03:26" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141120.xml" archivePath="Assets\DefaultTimeTable\20141120.xml" lastWriteTime="2014/11/4 上午 04:03:32" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141121.xml" archivePath="Assets\DefaultTimeTable\20141121.xml" lastWriteTime="2014/11/4 上午 04:03:38" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141122.xml" archivePath="Assets\DefaultTimeTable\20141122.xml" lastWriteTime="2014/11/4 上午 04:03:52" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141123.xml" archivePath="Assets\DefaultTimeTable\20141123.xml" lastWriteTime="2014/11/4 上午 04:03:58" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141124.xml" archivePath="Assets\DefaultTimeTable\20141124.xml" lastWriteTime="2014/11/4 上午 04:04:10" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141125.xml" archivePath="Assets\DefaultTimeTable\20141125.xml" lastWriteTime="2014/11/4 上午 04:04:16" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141126.xml" archivePath="Assets\DefaultTimeTable\20141126.xml" lastWriteTime="2014/11/4 上午 04:04:22" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141127.xml" archivePath="Assets\DefaultTimeTable\20141127.xml" lastWriteTime="2014/11/4 上午 04:04:28" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141128.xml" archivePath="Assets\DefaultTimeTable\20141128.xml" lastWriteTime="2014/11/4 上午 04:04:34" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141129.xml" archivePath="Assets\DefaultTimeTable\20141129.xml" lastWriteTime="2014/11/4 上午 04:04:48" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141130.xml" archivePath="Assets\DefaultTimeTable\20141130.xml" lastWriteTime="2014/11/4 上午 04:04:54" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141201.xml" archivePath="Assets\DefaultTimeTable\20141201.xml" lastWriteTime="2014/11/4 上午 04:05:06" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141202.xml" archivePath="Assets\DefaultTimeTable\20141202.xml" lastWriteTime="2014/11/4 上午 04:05:14" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141203.xml" archivePath="Assets\DefaultTimeTable\20141203.xml" lastWriteTime="2014/11/4 上午 04:05:20" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141204.xml" archivePath="Assets\DefaultTimeTable\20141204.xml" lastWriteTime="2014/11/4 上午 04:05:26" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141205.xml" archivePath="Assets\DefaultTimeTable\20141205.xml" lastWriteTime="2014/11/4 上午 04:05:32" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141206.xml" archivePath="Assets\DefaultTimeTable\20141206.xml" lastWriteTime="2014/11/4 上午 04:05:38" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141207.xml" archivePath="Assets\DefaultTimeTable\20141207.xml" lastWriteTime="2014/11/4 上午 04:05:44" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141208.xml" archivePath="Assets\DefaultTimeTable\20141208.xml" lastWriteTime="2014/11/4 上午 04:05:50" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141209.xml" archivePath="Assets\DefaultTimeTable\20141209.xml" lastWriteTime="2014/11/4 上午 04:05:56" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141210.xml" archivePath="Assets\DefaultTimeTable\20141210.xml" lastWriteTime="2014/11/4 上午 04:06:02" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141211.xml" archivePath="Assets\DefaultTimeTable\20141211.xml" lastWriteTime="2014/11/4 上午 04:06:08" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141212.xml" archivePath="Assets\DefaultTimeTable\20141212.xml" lastWriteTime="2014/11/4 上午 04:06:14" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141213.xml" archivePath="Assets\DefaultTimeTable\20141213.xml" lastWriteTime="2014/11/4 上午 04:06:20" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141214.xml" archivePath="Assets\DefaultTimeTable\20141214.xml" lastWriteTime="2014/11/4 上午 04:06:26" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141215.xml" archivePath="Assets\DefaultTimeTable\20141215.xml" lastWriteTime="2014/11/4 上午 04:06:32" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141216.xml" archivePath="Assets\DefaultTimeTable\20141216.xml" lastWriteTime="2014/11/4 上午 04:06:38" />
+  <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\DefaultTimeTable\20141217.xml" archivePath="Assets\DefaultTimeTable\20141217.xml" lastWriteTime="2014/11/4 上午 04:06:44" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\GP\greenpower.JPG" archivePath="Assets\GP\greenpower.JPG" lastWriteTime="2014/7/20 下午 07:02:15" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\Icons\Bike.png" archivePath="Assets\Icons\Bike.png" lastWriteTime="2014/3/17 下午 09:51:01" />
   <file source="C:\Users\kenny_000\Documents\GitHub\TRA\TRA\TRA_03\Assets\Icons\black_arrow.png" archivePath="Assets\Icons\black_arrow.png" lastWriteTime="2014/3/27 下午 11:40:48" />
