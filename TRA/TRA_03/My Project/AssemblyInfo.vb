@@ -34,6 +34,6 @@ Imports System.Resources
 '
 ' You can specify all the values or you can default the Revision and Build Numbers 
 ' by using the '*' as shown below:
-<Assembly: AssemblyVersion("2.1.2")> 
-<Assembly: AssemblyFileVersion("2.1.2")> 
+<Assembly: AssemblyVersion("2.1.3")> 
+<Assembly: AssemblyFileVersion("2.1.3")> 
 <Assembly: NeutralResourcesLanguageAttribute("en-US")> 
